@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>打赏组件</title>
+		<style>
+			/*按钮样式*/
+			.round-button {
+				font-size: 33px;
+				line-height: 40px;
+				position: relative;
+				/*、
+				 * inline-block元素会以内联块级元素的方式进行显示
+				 * block以块级元素的方式进行显示。独占一行
+				 */
+				display: inline-block;
+				width: 45px;
+				height: 45px;
+				margin: 0 auto;
+				padding: 0;
+				-webkit-user-select: none;
+				text-align: center;
+				vertical-align: middle;
+				color: #fff;
+				border: 1px solid #f1b60e;
+				border-radius: 50%;
+				background: #fccd60;
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fccd60), color-stop(100%, #fbae12), color-stop(100%, #2989d8), color-stop(100%, #207cca));
+				background: -webkit-linear-gradient(top, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
+				background: linear-gradient(to bottom, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%)
+			}
+			/*弹窗样式*/
+			
+			.footer_flex .flex-footer {
+				box-shadow: 0px 0px 5px 0px #409eff;
+				border-radius: 8px;
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left: 100px;
+				top: 200px;
+				text-align: center;
+				padding-top: 15px;
+				background: #fff;
+				display: none;
+			}
+			
+			.flex-footer input {
+				vertical-align: middle;
+				margin-bottom: 3px;
+				*margin-bottom: 3px;
+			}
+			/*滑动按钮样式*/
+			
+			:root {
+				--primary-color: #185ee0;
+				--secondary-color: #e6eef9;
+			}
+			
+			*,
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: "Inter", sans-serif;
+				background-color: rgba(230, 238, 249, 0.5);
+			}
+			
+			.container {
+				position: absolute;
+				left: 0;
+				top: 60%;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.tabs {
+				display: flex;
+				position: relative;
+				background-color: #fff;
+				box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+				padding: 0.75rem;
+				border-radius: 99px;
+			}
+			
+			.tabs * {
+				z-index: 2;
+			}
+			
+			input[type=radio] {
+				display: none;
+			}
+			
+			.tab {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 54px;
+				width: 200px;
+				font-size: 1.25rem;
+				font-weight: 500;
+				border-radius: 99px;
+				cursor: pointer;
+				transition: color 0.15s ease-in;
+			}
+			
+			.notification {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2rem;
+				height: 2rem;
+				margin-left: 0.75rem;
+				border-radius: 50%;
+				background-color: var(--secondary-color);
+				transition: 0.15s ease-in;
+			}
+			
+			input[type=radio]:checked+label {
+				color: var(--primary-color);
+			}
+			
+			input[type=radio]:checked+label>.notification {
+				background-color: var(--primary-color);
+				color: #fff;
+			}
+			
+			input[id=radio-1]:checked~.glider {
+				transform: translateX(0%);
+			}
+			
+			input[id=radio-2]:checked~.glider {
+				transform: translateX(100%);
+			}
+			
+			input[id=radio-3]:checked~.glider {
+				transform: translateX(200%);
+			}
+			
+			.glider {
+				position: absolute;
+				display: flex;
+				height: 54px;
+				width: 200px;
+				background-color: var(--secondary-color);
+				z-index: 1;
+				border-radius: 99px;
+				transition: 0.25s ease-out;
+			}
+			
+			@media (max-width: 700px) {
+				.tabs {
+					transform: scale(0.6);
+				}
+			}
+			/*图片样式*/
+			
+			.center-horizontal {
+				/*div中图片居中 */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			img {
+				/* 设置统一的大小 */
+				width: 230px;
+				height: 230px;
+			}
+		</style>
+		<script src="https://www.ewbang.com/dist/js/jquery.min.js"></script>
+	</head>
+ 
+	<body>
+		<div class="round-button" onclick="shang()">赏</div>
+ 
+		<!--隐藏页-->
+		<div style="text-align: center; margin-left:30px;" id="ds">
+ 
+			<div class="footer_flex">
+ 
+				<div class="flex-footer">
+					<h1>您的赏识是我们前进的动力</h1>
+					<div class="container">
+						<div class="tabs">
+							<input type="radio" id="radio-1" name="tabs" onclick="showImage('wx')" checked />
+							<label class="tab" for="radio-1">微信<!--<span class="notification"></span>--></label>
+							<input type="radio" id="radio-2" name="tabs" onclick="showImage('zfb')" />
+							<label class="tab" for="radio-2">支付宝</label>
+							<!--<input type="radio" id="radio-3" name="tabs" />
+				<label class="tab" for="radio-3">Completed</label>-->
+							<span class="glider"></span>
+						</div>
+					</div>
+					<!--图片展示-->
+					<div class="center-horizontal">
+						<img id="wx" src="https://s21.ax1x.com/2024/10/24/pAwujcq.jpg" style="display:block;" alt="微信">
+						<img id="zfb" src="https://s21.ax1x.com/2024/10/24/pAwuvj0.jpg" style="display:none;" alt="支付宝">
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+		<script language="javascript" type="text/javascript">
+			// 用display控制图片显示和隐藏
+			function showImage(imageId) {
+				var images = document.getElementsByTagName('img');
+				for(var i = 0; i < images.length; i++) {
+					if(images[i].id === imageId) {
+						images[i].style.display = 'block';
+					} else {
+						images[i].style.display = 'none';
+					}
+				}
+			}
+			// 打赏隐藏窗口开启与关闭
+			function shang() {
+				let obj = $(".flex-footer");
+				let isHidden = obj.is(':hidden');
+				if(isHidden) {
+					let screenWidth = $(window).width();
+					screenHeight = $(window).height(); //当前浏览器窗口的 宽高
+					let scrolltop = $(document).scrollTop(); //获取当前窗口距离页面顶部高度
+					let objLeft = (screenWidth - obj.width()) / 2;
+					let objTop = (screenHeight - obj.height()) / 2 + scrolltop;
+					obj.css({
+						left: objLeft + 'px',
+						top: objTop + 'px',
+						'display': 'block'
+					});
+					obj.show();
+					// 添加点击事件监听器到document，隐藏页开启后，如果点击空白部分则隐藏
+					document.addEventListener('click', handleClick, true);
+				} else {
+					obj.hide();
+				}
+ 
+			}
+			
+			//隐藏页开启后，启动监听方法，如果点击空白部分则隐藏
+			function handleClick(event) {
+				let obj = $(".flex-footer");
+				let isHidden = obj.is(':hidden');
+				if(!isHidden) {
+					// 获取你想要检测的div元素
+					var div = document.getElementById('ds');
+					// 检查点击的目标是否不是div以及div的任何子元素
+					if(event.target !== div && !div.contains(event.target)) {
+						// 点击在div外面，执行需要的操作
+						shang();
+						// 稍后移除事件监听器
+						document.removeEventListener('click', handleClick, true);
+					}
+				}
+			}
+ 
+			//  如果想默认加载就使用，然后去掉赏的<div class="round-button" onclick="shang()">赏</div>
+			//			shang()
+		</script>
+ 
+	</body>
+ 
+</html>

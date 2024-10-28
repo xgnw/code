@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>原神启动</title>
+    <style>
+        body {
+            background-image: url(背景图.jpg);
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+        
+        h1 {
+            padding-top: 200px;
+            font-size: 50px;
+        }
+        
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #ff4500;
+            border: none;
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <h1>原神启动</h1>
+    <button onclick="launchGenshinImpact()">点击启动</button>
+
+    <script>
+        function launchGenshinImpact() {
+            // 在此处添加启动原神的代码
+            // 可以使用JavaScript调用本地程序或打开游戏启动器
+            alert('原神正在启动中...');
+            // 以下是一个示例，点击按钮后跳转到原神官网
+            window.location.href = 'https://genshin.mihoyo.com/';
+        }
+    </script>
+</body>
+</html>

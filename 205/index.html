@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>AGE动漫官方APP</title>
+    <meta name="keywords" content="AGE动漫APP,AGE动漫苹果客户端下载,AGE动漫客户端下载">
+    <meta name="description" content="AGE动漫APP是专门为agefans.com官方定制的APP，AGE动漫专注于资源收集整理 海量的有效的高质量的动漫资源下载 动漫百度网盘下载">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="panel-cover" style="background-image: url(origin/pgc-image/4af560a4ab3944a5a584abe4195a136d.jpg)">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content">
+                    <img src="origin/pgc-image/8069753dcbde447aa5eacf1bf3f390b5.jpg" width="150" alt="AGEFANS LOGO" class="panel-cover__logo logo">
+                    <hr class="panel-cover__divider">
+                    <p class="panel-cover__description">你看我，不就是一个 APP 么? (*^▽^*) </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary">
+                    <p class="footer">AGE动漫 © 2018 - 2024 AGE.TV</p>
+                    <div class="navigation-wrapper">
+                        <div>
+                            <nav class="cover-navigation cover-navigation--primary">
+                                <ul class="navigation">
+                                    <li class="navigation__item" id="android-download-btn"><a href="app/age.apk" title="Android 客户端下载">Android 客户端下载</a></li>
+                                    <li class="navigation__item" id="ios-download-btn"><a id="ios-download-url" href="https://cdn.aiqingyu1314.com/app/agefans.mobileconfig" target="_blank" title="iOS客户端下载">iOS 客户端下载</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <p class="panel-cover__description pc_only install_notice">Android 用户使用带二维码功能的软件：百度手机助手、微信、QQ等<br>iPhone 用户请使用手机相机，扫描下方二维码，用 Safari 浏览器打开<br>如果网址被QQ、微信拦截，请使用默认浏览器输入 agefans.app</p>
+                    <div class="navigation-wrapper qrcode pc_only">
+                        <img width="180" referrerpolicy="no-referrer" src="origin/137bc0000ca932e63e33d.png">
+                    </div>
+                    <p class="panel-cover__description pc_only install_notice"><a href="ios.html" style="text-decoration: underline;">iOS用户安装帮助引导</a></p>
+                </div>
+            </div>
+            <div class="panel-cover--overlay cover-slate"></div>
+        </div>
+    </header>
+<script>
+(function(){
+    var mobile_bs = {
+        versions: function() {
+            var u = navigator.userAgent;
+            return {
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                ios: !! u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                mobile: !! u.match(/AppleWebKit.*Mobile.*/) || !! u.match(/AppleWebKit/) && u.indexOf('QIHU') && u.indexOf('QIHU') > -1 && u.indexOf('Chrome') < 0,
+                iPad: (/macintosh|mac os x/i.test(u) && window.screen.height > window.screen.width && !u.match(/(iPhone\sOS)\s([\d_]+)/)) || u.match(/(iPad).*OS\s([\d_]+)/)
+            }
+        }()
+    };
+
+    var ua = navigator.userAgent.toLowerCase();
+    var client_bs = {
+        iswx : ua.match(/MicroMessenger/i) == "micromessenger",
+        isqq : ua.match(/QQ/i) == "qq"
+    };
+
+    if (client_bs.isqq || client_bs.iswx) {
+        window.location.href = "/qq/";
+        return false;
+    }
+
+    if (mobile_bs.versions.android) {
+        document.getElementById("ios-download-btn").style.display = 'none';
+    }
+
+    if (mobile_bs.versions.ios) {
+        document.getElementById("android-download-btn").style.display = 'none';
+    }
+
+    document.getElementsByTagName('body')[0].onload = function(){
+        if(mobile_bs.versions.mobile || mobile_bs.versions.iPad) {
+            document.getElementById("ios-download-url").setAttribute("href", "/ios.html");
+        }
+    };
+})();
+
+var _hmt = _hmt || [];
+(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?d9e73977be829d45651d371c85ec68de";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();
+</script>
+</body>
+</html>

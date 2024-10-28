@@ -1,0 +1,228 @@
+(͡·̮̃·̃) 撸码的乐趣 💯 ，“人没了，™代码还在”
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis: 66.66%;"> <style>
+.ga{
+	font-size: 25px;}
+
+/* "嘎" 字的样式 */
+.a_ga{
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;}
+.a_ga:hover{
+	color: #07D500;
+	text-decoration: none;}
+/*隐藏敏感文字*/
+.yincang{
+	color: #806363;
+	margin: 0px auto;
+	width: 150px;
+	background-color:#806363;
+}
+.yincang:hover{
+	background-color:inherit;
+}
+.return a {
+text-decoration: none;
+	color:#F2FFFA;
+	text-align: center;
+	font-size: 20px;
+	background-color: pink;
+	border: #67734d 3px dotted;
+	display:inline-block;
+	width: 100px;
+	height: 30px;
+	position: fixed;
+	right: 230px;
+	bottom: 50px;
+}
+.return a:hover{
+	color:#00ccdd;
+	border: #00ccdd 3px dotted;
+}
+
+</style> <b class="a_ga" title="啊，你发现了我！">嘎!</b> 你好，你想干饭吗？ <br />
+<p>我是一个程序猿<i class="yincang"> (啥也不会) </i> <br />每天放学发布好作业答案后，就开始疯狂敲代码，改进网站</p>
+<!-- 作业小窗口 -->
+<div class="return"><a title="钞座叶砖蓝" href="https://ooo.gg/blog/zy/">今日作业</a></div>
+</div>
+</div>
+
+<center>今天:<span><script language=Javascript type=text/Javascript> 
+var day=""; 
+var month=""; 
+var ampm=""; 
+var ampmhour=""; 
+var myweekday=""; 
+var year=""; 
+mydate=new Date(); 
+myweekday=mydate.getDay(); 
+mymonth=mydate.getMonth()+1; 
+myday= mydate.getDate(); 
+myyear= mydate.getYear(); 
+year=(myyear > 200) ? myyear : 1900 + myyear; 
+if(myweekday == 0) 
+weekday=" 星期日 "; 
+else if(myweekday == 1) 
+weekday=" 星期一 "; 
+else if(myweekday == 2) 
+weekday=" 星期二 "; 
+else if(myweekday == 3) 
+weekday=" 星期三 "; 
+else if(myweekday == 4) 
+weekday=" 星期四 "; 
+else if(myweekday == 5) 
+weekday=" 星期五 "; 
+else if(myweekday == 6) 
+weekday=" 星期六 "; 
+document.write(year+"年"+mymonth+"月"+myday+"日 "+weekday); 
+</script><br>
+<span id="showsectime" style="color:#FF0000;">
+<script type="text/javascript">
+function NewDate(str) { 
+str = str.split('-'); 
+var date = new Date(); 
+date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
+date.setUTCHours(0, 0, 0, 0, 0); 
+return date; 
+} 
+function showsectime() {
+var birthDay =NewDate("2020-02-08");//这里是建站时间
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("showsectime").innerHTML = "本站已安全运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(showsectime, 1000);
+}showsectime();
+</script>
+
+css
+[data-theme=dark] 黑暗
+[data-theme=light] 光明
+theme=light] .c{
+color:#000;
+}
+
+
+
+每年很多站长的站点底部版权都要每年手动更换一次，如果页面没有统一引用foot的话，要改起来就比较麻烦了。
+
+今天教大家怎么实现自动获取当前年份并更新。
+
+直接在全局foot下或者在需要显示的地方加入以下代码即可！
+
+<script type="text/javascript">
+<!-- Begin
+copyright=new Date(); //取得当前的日期
+update=copyright.getFullYear(); //取得当前的年份
+document.write("© Copyright 2019-"+ update + " All rights reserved. 小马博客版权所有");//update为自动更新的年份
+// End -->
+</script>
+
+在网站上添加版权声明,可以有效地保护自己的版权。版权声明的写法可以参考下面的代码。
+
+实现代码php版，插入php对应文件即可使用。
+ <div>
+        <fieldset
+            style=" border: 1.5px dashed #008cff; padding: 10px; border-radius: 5px; line-height: 2em;font-weight: 700;color: var(--key-color);background-color: var(--body-bg-color);">
+            <legend align="center"
+                style=" margin-bottom: -2px;width: 30%;text-align: center; background-color: #008cff; border-radius: 999px; background-image: linear-gradient(to right, #FFCC99, #FF99CC);border: 1.5px dashed #008cff;">
+                版权声明
+            </legend>
+            <span class="btn-info btn-xs">1</span> 本网站名称：<span style="color: #3333ff"><span
+                    style="color: #09ace2; font-size: 15px"><strong>小马博客-分享有价值的资源</strong></span></span><br>
+            <span class="btn-info btn-xs">2</span> 本站永久网址：<a href="https://www.xiaomaw.cn"
+                style="color: #09ace2;">https://www.xiaomaw.cn</a><br>
+            <span class="btn-info btn-xs">3</span> 本网站的文章部分内容可能来源于网络，仅供大家学习与参考，如有侵权，请联系站长 QQ<a
+                href="http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes" target="_blank"
+                style="color:#09ace2;">123456</a>进行删除处理。<br>
+            <span class="btn-info btn-xs">4</span> 本站一切资源不代表本站立场，并不代表本站赞同其观点和对其真实性负责。<br>
+            <span class="btn-info btn-xs">5</span> 本站一律禁止以任何方式发布或转载任何违法的相关信息，访客发现请向站长举报<br>
+            <span class="btn-info btn-xs">6</span> 本站资源大都存储在云盘，如发现链接失效，请联系我们我们会第一时间更新。<br>
+            <span class="btn-info btn-xs">7</span> 如无特别声明本文即为原创文章仅代表个人观点，版权归《<a href="https://www.xiaomaw.cn"
+                style="color: #09ace2;">小马博客</a>》所有，欢迎转载，转载请保留原文链接。<br>
+        </fieldset>
+    </div>
+
+独立版本html代码，比较适用博客等支持html代码的声明。
+<style>
+        fieldset {
+            border: 1.5px dashed #008cff;
+            padding: 10px;
+            border-radius: 5px;
+            line-height: 2em;
+            font-weight: 700;
+            color: var(--key-color);
+            background-color: var(--body-bg-color);
+        }
+ 
+        legend {
+            align-items: center;
+            margin-bottom: -2px;
+            width: 30%;
+            text-align: center;
+            background-color: #008cff;
+            border-radius: 999px;
+            background-image: linear-gradient(to right, #FFCC99, #FF99CC);
+            border: 1.5px dashed #008cff;
+        }
+    </style>
+<fieldset>
+            <legend style="color: #000">
+            免责声明：
+            </legend>
+    本站提供的一切软件、教程和内容信息仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。本站信息来自网络收集整理，版权争议与本站无关。您必须在下载后的24个小时之内，从您的电脑或手机中彻底删除上述内容。如果您喜欢该程序和内容，请支持正版，购买注册，得到更好的正版服务。我们非常重视版权问题，如有侵权请邮件与我们<a href="/delete.html" target="_blank"><strong>联系处理</strong></a>。敬请谅解！侵删请致信E-mail：123456@qq.com
+</fieldset>
+
+
+   <script type="text/javascript" src="https://api.yum6.cn/djt/index.php?encode=js"></script>
+   <script>binduyan()</script>
+
+
+给博客右下角添加一个弹簧人物角色, 在 footer.php 添加如下代码即可，点击底座还可以切换人物哦！！开源项目地址：https://github.com/itorr/sakana
+<div class="sakana-box"></div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/sakana"></script>
+<script>
+// 启动
+const sakana = Sakana.init({
+el: '.sakana-box', // 启动元素 node 或 选择器
+scale: .5, // 缩放倍数
+canSwitchCharacter: true, // 允许换角色
+inertia: 0.01, // 惯性
+decay: 0.97, // 衰减
+r: -20, // 启动角度
+y: 10, // 启动高度
+scale: 0.5, // 缩放倍数
+translateY: 0, // 位移高度
+});
+</script>
+ 
+<style>
+html .sakana-box{
+z-index: 80;
+position: fixed;
+right: 0;
+bottom: 0;
+transform-origin: 100% 100%; /* 从右下开始变换 */
+}
+</style>
+ <footer class="copyright">Copyright ©2022-<script>document.currentScript.insertAdjacentHTML('afterEnd',new Date().getFullYear())</script>      <script>
+        document.write(new Date().getFullYear());
+      </script> <a href="https://www.432600.xyz/">简单导航</a>&nbsp;｜&nbsp;<a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn">京ICP备**********号</a></footer>
+      
+      
+      
+    404 Not Found：好巧，竟然在这里遇到你 ^_^ 
+对不起，您所访问的页面不存在或者已删除！
+由于文章重构修改过，原来的文章链接可能已经换了个名字，你可以到 文章归档–> 这里查看全部文章，看下有没有你感兴趣的文章！
+
+预计将在约 2 秒后返回首页。
+
+当然，你也可以 点这里 Click Here 直接返回首页。

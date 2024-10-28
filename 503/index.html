@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Keywords" content="saoml,安装脚本,网络工具,linux脚本,linux工具,流控,saonpanel,linux,主页,源码" />
+<meta name="Description" content="saoml,安装脚本,网络工具,linux脚本,linux工具,流控,saonpanel,linux,主页,源码" />
+<title>网络工具共享站点</title>
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+<!-- 引入 layui.css -->
+<link href="./web/layui/css/layui.css" rel="stylesheet">
+  <script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+
+<html>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .ws-footer {
+            text-align: center;
+        }
+        .layui-field-box {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-bg-gray" style="padding: 12px;">
+  <div class="layui-row layui-col-space15">
+    <h1>资源列表</h1>
+    <fieldset class="layui-elem-field">
+  <legend>站点公告</legend>
+   <div class="layui-field-box">
+    <img src="https://dnalo.com/panel/new.gif" alt="gg" width="30px" height="30px">
+     有任何问题、侵权联系删除,当然脚本失效的话也可以联系我修复。<br>
+  </div>
+</fieldset>
+</div>
+</div>
+    <div class="layui-bg-gray" style="padding: 12px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">站点域名</div>
+        <div class="layui-card-body">
+        <blockquote class="layui-elem-quote">
+        域名：dnalo.com
+       </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">联系站长</div>
+        <div class="layui-card-body">
+        <blockquote class="layui-elem-quote">
+         QQ：572945050
+        </blockquote>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+<div class="layui-bg-gray" style="padding: 16px;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">综合脚本</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        wget -O dnalo https://dnalo.com/install/dnalo && bash dnalo
+        </pre>
+        <p>说明：把多个脚本简单的进行了整合。</p>
+        </div>
+      </div>
+    </div>
+        <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">宝塔面板（纯净版）</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        wget -O install.sh https://panel.wang/install/install_6.0.sh && bash install.sh
+        </pre>
+        <p>说明：第三方云端纯净安装包。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">宝塔面板</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_panel.sh;else wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh;fi;bash install_panel.sh ed8484bec
+        </pre>
+        <p>说明：宝塔面板万能安装脚本，其他脚本可自行前往官网 bt.cn 查看。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">宝塔云监控</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_btmonitor.sh;else wget -O install_btmonitor.sh https://download.bt.cn/install/install_btmonitor.sh;fi;bash install_btmonitor.sh
+        </pre>
+        <p>说明：宝塔官方开发的多服务器监控系统。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">SaoML流控</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        wget -O saoml5 http://saoml.dnalo.com/saoml5;chmod +x saoml5;./saoml5
+        </pre>
+        <p>说明：仅可安装8.0版本</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">Linux检测</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        wget -qO- sb.oldking.net | bash
+        </pre>
+        <p>说明：可以检测服务器网速等。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">BBR加速</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+           bash <(curl -Lso- https://dnalo.com/install/kernel/kernel.sh)
+        </pre>
+        <p>说明：因为国内服务器无法下载脚本，所以我存在香港。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">磁盘挂载</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+          wget -O auto_disk.sh http://download.bt.cn/tools/auto_disk.sh && bash auto_disk.sh
+            </pre>
+        <p>说明：官方写的一键挂载宝塔面板数据盘。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">宝塔面板优化</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+          wget -qO optimize https://dnalo.com/panel/optimize && bash optimize
+        </pre>
+        <p>说明：在彩虹优化脚本基础上新增部分功能。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">宝塔面板优化（国际版）</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        wget -qO optimize_aapanel https://dnalo.com/aapanel/optimize_aapanel && bash optimize_aapanel
+        </pre>
+                <p>说明：国际版宝塔面板优化。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">V2ray面板</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        bash <(wget -qO- -o- https://git.io/v2ray.sh)
+        </pre>
+        <p>说明：v2ray面板安装代码。</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">Xray面板</div>
+        <div class="layui-card-body">
+            <pre class="layui-code code-demo" lay-options="{}">
+        bash <(wget -qO- -o- https://github.com/233boy/Xray/raw/main/install.sh) -v v1.8.3
+        </pre>
+        <p>说明：xray面板安装代码。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="layui-bg-gray" style="padding: 16px;">
+  <div class="layui-row layui-col-space15">
+<div class="layui-footer ws-footer">
+Copyright © 2023 网络工具共享   All rights reserved. <br><br>
+<p>友情链接：
+    <a href="https://www.xpnal.com" rel="nofollow" target="_blank">遇枧笔记</a> |
+        <a href="https://enphp.xpnal.com" rel="nofollow" target="_blank">PHP代码加密</a>  |
+        <a href="https://dnalo.com" rel="nofollow" target="_blank">Dnalo</a>|
+        <a href="https://tool.dnalo.com" rel="nofollow" target="_blank">遇枧工具箱</a>
+        </p><br>
+        <p><img src="https://icp.gov.moe/favicon.ico" alt="萌icp" width="25px" height="25px"><a href="https://icp.gov.moe/?keyword=20235488" target="_blank">萌ICP备20235488号</a></p>
+</div>
+</div>
+</div>
+    <script src="./web/layui/layui.js"></script>
+    <script src="./web/effect/sakura.js"></script>
+    <script>
+   layui.use(function(){
+   layui.code({
+    elem: '.code-demo'
+  });
+})
+</script>
+</body>
+</html>

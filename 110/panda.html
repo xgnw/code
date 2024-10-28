@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="keywords" content="熊猫书签,Panda Bookmark" />
+<meta name="description" content="熊猫书签,Panda Bookmark" />
+<link rel="icon" href="data:," />
+<title>熊猫书签</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;max-width:100%;vertical-align:top;}
+body{margin:32px auto;width:98%;border:1px solid #666;font-size:14px;line-height:26px;word-wrap:break-word;word-break:break-all;}
+a{color:#000;text-decoration:none;}
+input{margin:6px 0;padding:4px;width:100%;height:30px;}
+#expanda{text-align:center;}
+#expanda a{color:#CE0000;}
+.chart{padding:0;font-size:0;line-height:26px;text-align:center;border:0;}
+.chart a{display:inline-block;width:calc(100% / 5);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;}
+div,.chart a{padding:2px 8px 4px 8px;border:1px solid #666;}
+</style>
+<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style-type: none;
+		}
+		html,body{
+			overflow-x: hidden;
+			
+		}
+		#table{
+			width: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		#table td{
+			text-align: center;
+			transition: all 0.3s;
+			width: 190px;
+			height: 50px;
+		}
+		#table .blog:hover{
+			animation: bounce 0.5s;
+			background-color: cornflowerblue;
+		}
+		#table .sever:hover{
+			background-color: indianred;
+			animation: rubberBand 0.5s;
+		}
+		#table .jc:hover{
+			background-color: green;
+			animation: bounceIn 0.5s;
+		}
+		#table td:hover a{
+			color: white;
+		}
+		.blog a{
+			color: cadetblue;
+			transition: all 0.3s;
+		}
+		.sever a{
+			color: indianred;
+			transition: all 0.3s;
+		}
+		.jc a{
+			color: green;
+			transition: all 0.3s;
+		}
+		.blog{
+			border: 1px solid cornflowerblue;
+		}
+		.sever{
+			border: 1px solid indianred;
+		}
+		.jc{
+			border: 1px solid green;
+		}
+		#top{
+			width: 100%;
+		}
+		#top img{
+			width: 10%;
+		}
+		#nav{
+			width: 100%;
+			height: 50px;
+			background-color: cadetblue;
+			margin-bottom: 10px;
+		}
+		#nav ul{
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			display: flex;
+			justify-content: space-around;
+			text-align: center;
+		}
+		#nav ul li{
+			width: 130px;
+			height: 100%;
+			display: inline-block;
+			transition: all 0.3s;
+		}
+		#nav ul li:hover{
+			background-color: lightblue;
+		}
+		#nav a{
+			color: white;
+			font-size: 20px;
+		}
+		#foot{
+			width: 100%;
+			text-align: center;
+		}
+		.wz{
+			border: 1px solid purple;
+		}
+		.wz a{
+			color: purple;
+			transition: all 0.3s;
+		}
+		
+		#table .wz:hover{
+			background-color: purple;
+			animation: flipInX 0.5s;
+		}
+		
+		.ds{
+			border: 1px solid palevioletred;
+		}
+		.ds a{
+			color: palevioletred;
+			transition: all 0.3s;
+		}
+		#table .ds:hover{
+			background-color: palevioletred;
+			animation: tada 0.5s;
+		}
+	</style>
+</head>
+<body>
+<div id="expanda" style="display:none;">
+<a href="https://exhentai.org/favicon.ico"><b>进入里站</b></a>
+</div>
+<div class="chart">
+<a id="button_monkey" href="javascript:;" onclick="setup('monkey');">油猴</a>
+<a id="button_signup" href="javascript:;" onclick="setup('signup');">熊猫书签</a>
+<a id="button_origin" href="javascript:;" onclick="setup('origin');">传统</a>
+<a id="button_origin" href="javascript:;" onclick="setup('origin');">传统</a>
+<a id="button_origin" href="javascript:;" onclick="setup('origin');">传统</a>
+</div>
+<span id="signup">
+	<table border="1" cellspacing="0" cellpadding="0" id="table" class="animated zoomIn">
+		<!--标题-->
+		<tr id="one">
+			<td colspan="6" style="background-color: cornflowerblue;color: white;font-size: 20px;font-weight: bold;border: 2px solid cornflowerblue;">小说标题(2021/05/04)09:24开始</td>
+		</tr>
+		<!--对应的链接-->
+		<tr>
+			<td class="blog"><a href="###" target="_blank" rel="nofollow">天才在左，疯子在右</a></td>
+			<td class="blog"><a href="###" target="_blank" rel="nofollow">人间失格</a></td>
+			<td class="blog"><a href="###" target="_blank" rel="nofollow">鬼谷子</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<!--标题-->
+		<tr>
+			<td colspan="6" style="background-color: indianred;color: white;font-size: 20px;font-weight: bold;border: 2px solid indianred;">小说第二章</td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<!--标题-->
+		<tr>
+			<td colspan="6" style="background-color: green;color: white;font-size: 20px;font-weight: bold;border: 2px solid green;">小说第三章</td>
+		</tr>
+			<tr>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+			<td class="jc"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="background-color: purple;color: white;font-size: 20px;font-weight: bold;border: 2px solid purple;">小说第四章</td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="background-color: palevioletred;color: white;font-size: 20px;font-weight: bold;border: 2px solid palevioletred;">小说第五章</td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+	</table>
+</span>
+<span id="monkey" style="display:none;">
+<div>
+<b>[安装插件]</b><br />
+根据浏览器安装油猴插件：<br />
+<a href="https://www.tampermonkey.net/" target="_blank"><u><b>Tampermonkey</b></u></a><br />
+iOS系统只能使用<a href="javascript:;" onclick="setup('origin');"><u>传统书签</u></a>。<br />
+Chrome商店进不去请改用<a href="https://www.firefox.com.cn/" target="_blank"><u>Firefox</u></a>。<br />
+</div>
+<div>
+<b>[添加脚本]</b><br />
+为油猴添加熊猫书签脚本：<br />
+<a id="monkey_link" target="_blank"><u><b>Panda.user.js</b></u></a><br />
+</div>
+<div>
+<b>[解锁里站]</b><br />
+访问本页面，点击顶部“进入里站”。<br />
+</div>
+</span>
+<span id="origin" style="display:none;">
+<div>
+<b>[创建书签]</b><br />
+把本页添加至书签。<br />
+点击浏览器地址栏。<br />
+找到刚才添加的书签，长按，编辑。<br />
+使用刚才复制的代码，替换原有地址。<br />
+</div>
+<div>
+<b>[解锁里站]</b><br />
+点击地址栏，运行熊猫书签。<br />
+跳转图标页，再次运行熊猫书签。<br />
+</div>
+</span>
+<div>
+<b>[常见问题]</b><br />
+这里收集了一些使用E站时常见的错误。<br />
+<b>网络封锁：链接被重置</b><br />
+直接访问跳转至被墙的表站，请使用熊猫书签。<br />
+<b>无权访问：白屏或“err”</b><br />
+地域拦截或账号失效，请尝试断开V:P!И访问。<br />
+<b>流量超限：509 Bandwidth Limit Exceeded</b><br />
+浏览了过多图片，请等待配额恢复或更换IP。<br />
+</div>
+<div class="chart">
+<a href="https://zeit.co/" target="_blank">ZEIT</a>
+<a href="https://github.com/noprogramming/expanda/issues" target="_blank">GitHub</a>
+<a href="https://rawgit.org/" target="_blank">RawGit</a>
+</div>
+<script>
+function check(exkey){
+if(exkey.length<36 || !/^[\dA-F]{32}$/i.test(exkey.split('x')[0].substr(0,32)) || !Number.isInteger(parseInt(exkey.split('x')[0].substr(32))) || (exkey.split('x')[1] && !/^[\dA-F]+$/i.test(exkey.split('x')[1]))){
+document.getElementById('button_signup').style.color='';
+window.location.hash='';
+return false;
+};
+document.getElementById('button_signup').style.color='#228B22';
+window.location.hash=exkey;
+return exkey;
+};
+function setup(element){
+var exkey=check(window.location.hash?window.location.hash.substr(1):'');
+if(exkey){document.getElementById('exkey').value=exkey;};
+if(current && current!=element){
+document.getElementById('button_'+current).style.fontWeight='';
+document.getElementById(current).style.display='none';
+};
+current=element;
+document.getElementById('button_'+element).style.fontWeight='bold';
+document.getElementById(element).style.display='';
+document.getElementById('monkey_link').href=(exkey?(exkey+'.'):'')+'panda.user.js';
+if(element=='origin'){
+var xhr=new XMLHttpRequest();
+xhr.open('GET','config?'+parseInt(Date.parse(new Date())/60000),true);
+xhr.onerror=function(e){console.log('network_error');};
+xhr.onreadystatechange=function(e){if(this.readyState===4 && this.status===200){
+var obj=JSON.parse(this.responseText);
+var txt=obj.origin.replace(/`func`/g,obj.func).replace(/`node`/g,obj.node).replace(/`key`/g,(exkey?'s.setAttribute(\'exkey\',\''+exkey+'\');':'')).replace(/`web`/g,obj.node[0]);
+document.getElementById('origin_code').value=txt;
+}};
+xhr.send();
+};
+};
+var current=null;
+setup('signup');
+</script>
+</body>
+</html>

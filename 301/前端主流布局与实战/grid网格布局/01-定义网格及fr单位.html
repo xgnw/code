@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-demo-04 {
+            width: 300px;
+            height: 300px;
+            margin: 10px auto;
+            display: grid;
+            grid-template:
+                "a1 a1 a2" 1fr
+                "a1 a1 a2" 1fr
+                "a3 a3 a3" 1fr
+                / 1fr 1fr 1fr;
+
+            gap: 10px;
+        }
+
+        .grid-demo-04>div {
+            background-color: aquamarine;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .grid-demo-04>div:first-of-type {
+            grid-area: a1;
+        }
+
+        .grid-demo-04>div:nth-of-type(2) {
+            grid-area: a2;
+        }
+
+        .grid-demo-04>div:last-of-type {
+            grid-area: a3;
+        }
+
+    .grid-demo-05 {
+        height: 100px;
+        margin: 10px 0;
+        background-color: yellowgreen;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .grid-demo-05>div {
+        background-color: cyan;
+        border: 1px solid #ccc;
+        height: 100%;
+        width: 18%;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+</style>
+</head>
+
+<body>
+    <div class="grid-demo-04">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+<div class="grid-demo-05">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+</body>
+
+</html>

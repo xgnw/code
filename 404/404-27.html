@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>404 Not Found</title>
+                        <style>
+                            .p404 {
+                                font-family: 'Milky-Coffee';
+                                font-size: 15rem;
+                            }
+                            @-webkit-keyframes dancingColors {
+                                0% {
+                                    transform: translate(0px, 0px);
+                                }
+                                50% {
+                                    background-position: -860px;
+                                    transform: translate(0px, 10px);
+                                }
+                                100% {
+                                    transform: translate(0px, 0);
+                                }
+                            }
+
+                            @keyframes dancingColors {
+                                0% {
+                                    transform: translate(0px, 0px);
+                                }
+                                50% {
+                                    background-position: -860px;
+                                    transform: translate(0px, 10px);
+                                }
+                                100% {
+                                    transform: translate(0px, 0);
+                                }
+                            }
+
+                            .gradient-text {
+                                transition: all 2s ease;
+                                background: -o-linear-gradient(-45deg, #448bff, #44e9ff, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                                background: -webkit-linear-gradient(-45deg, #448bff, #44e9ff, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                                -webkit-background-clip: text;
+                                -moz-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                background-clip: text;
+                                -webkit-animation: dancingColors 10s infinite forwards ease-in-out;
+                                animation: dancingColors 10s infinite forwards ease-in-out;
+                            }
+                        </style>
+                        <div id="post-content" class="wrapper-lg">
+                            <p class="text-center p404 gradient-text">
+                                404
+                            </p>
+                            <p class="text-center h3">
+                                您访问的页面不存在，尝试搜索一下吧
+                            </p>
+                        </div>
+  </body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <title>404错误</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+  @charset "UTF-8";
+@media (min-width: 100px) and (max-width: 767px) {
+  /* 在此添加针对手机屏幕的样式 */
+  html {
+    font-size: 12px !important;
+  }
+  #progress-bar-container {
+    width: 80% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* 在此添加针对平板屏幕的样式 */
+  html {
+    font-size: 14px !important;
+  }
+  #progress-bar-container {
+    width: 80% !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1920px) {
+  /* 在此添加针对电脑屏幕的样式 */
+  html {
+    font-size: 16px !important;
+  }
+}
+#progress-bar-background {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  font-family: "微软雅黑";
+}
+#progress-bar-background.hide {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+#progress-bar-background #progress-bar-container {
+  width: 50%;
+  height: 1px;
+  background-color: #e1e1e1;
+  /* 保证进度条在所有内容之上 */
+  z-index: 10000;
+}
+#progress-bar-background #progress-bar-container #progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #545454;
+  /* 过渡效果 */
+  -webkit-transition: width 0.1s ease;
+  transition: width 0.1s ease;
+  margin-bottom: 10px;
+}
+#progress-bar-background #progress-bar-container .progress-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#progress-bar-background #progress-bar-container .progress-text .loading-text {
+  margin-left: 0.5rem;
+}
+#progress-bar-background #progress-bar-container .progress-text .loading-title {
+  letter-spacing: 0.5rem;
+}
+    :root {
+      --text-color: #000;
+      --text-color-gray: #888;
+      --text-color-hover: #fff;
+      --icon-color: #444;
+    }
+
+    html.dark-mode {
+      --text-color: #fff;
+      --text-color-gray: #888;
+      --text-color-hover: #3c3c3c;
+      --icon-color: #cbcbcb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--text-color-hover);
+      color: var(--text-color);
+      font-family: "PingFang SC", "Open Sans", "Microsoft YaHei", sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .dark-mode body {
+      background-color: #2a2a2a;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--text-color-gray);
+      transition: all 0.5s ease;
+    }
+
+    a:hover {
+      color: var(--text-color);
+    }
+
+    .ico {
+      margin: 4rem 2rem;
+      font-size: 8rem;
+      color: var(--text-color-gray);
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .tip {
+      padding: 8px 12px;
+      background-color: var(--text-color-gray);
+      color: var(--text-color-hover);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .text {
+      margin: 1rem;
+    }
+
+    .control button {
+      background-color: var(--text-color-hover);
+      border: var(--text-color) solid;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      transition: all 0.5s ease;
+      margin: 1rem 0.2rem;
+      color: var(--text-color);
+      cursor: pointer;
+    }
+
+    .control button:hover {
+      border: var(--text-color) solid;
+      background: var(--text-color);
+      color: var(--text-color-hover);
+    }
+
+    .control button i {
+      margin-right: 6px;
+    }
+
+    footer {
+      line-height: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+    }
+
+    footer .social {
+      color: var(--icon-color);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    footer .social i {
+      margin: 0 12px;
+    }
+
+    footer .point::before {
+      content: "·";
+      color: var(--text-color-gray);
+    }
+
+    .power,
+    .icp {
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+    <div id="progress-bar-background">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+            <div class="progress-text">
+                <p class="loading-text">>>> LOADING - <span id="loading-number">0%</span></p>
+                <p class="loading-title">正在加载-小威同学的世界</p>
+            </div>
+        </div>
+    </div>
+  <main>
+    <div class="ico"><i class="fa-solid fa-circle-exclamation"></i></div>
+    <div class="title">简单导航</div>
+    <div class="text">您好像输入了错误的地址</div>
+            <div class="text">↓ 不要慌，来碗毒鸡汤暖暖心灵吧！↓</div>
+                <div style="line-height: 30px; font-size: 12pt">
+              <script
+                type="text/javascript"
+                src="https://api.yum6.cn/djt/index.php?encode=js"
+              ></script>
+              <script>
+                binduyan();
+              </script>
+            </div>
+    <!-- <div class="tip">本服务已开启防跨站请求</div> -->
+    <div class="control">
+      <button onclick="clickFunction()">
+        <i class="fa-solid fa-rotate-left"></i>
+        <span>回到首页</span>
+      </button>
+      <!-- <button onclick="window.open(`https://binaryify.github.io/NeteaseCloudMusicApi/`)">
+        <i class="fa-solid fa-book"></i>
+        <span>接口文档</span>
+      </button> -->
+    </div>
+  </main>
+  <footer>
+    <div class="social">
+      <i class="fa-brands fa-github" onclick="socialJump('github')"></i>
+      <div class="point"></div>
+      <i class="fa-solid fa-house" onclick="socialJump('home')"></i>
+      <div class="point"></div>
+      <i class="fa-solid fa-envelope" onclick="socialJump('email')"></i>
+      <div class="point"></div>
+      <i class="fa-brands fa-qq fa-qq" onclick="socialJump('qq')"></i>
+    </div>
+    <div class="power">
+      Copyright ©
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <a href="https://www.432600.xyz/" target="_blank">简单导航</a>
+    </div>
+  </footer>
+  <script>
+    // 跟随系统主题
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    const toggleDarkMode = (darkModeMediaQuery) => {
+      if (darkModeMediaQuery.matches) {
+        document.documentElement.classList.add("dark-mode");
+      } else {
+        document.documentElement.classList.remove("dark-mode");
+      }
+    };
+    darkModeMediaQuery.addListener(toggleDarkMode);
+    toggleDarkMode(darkModeMediaQuery);
+
+    // 按钮事件
+    const clickFunction = () => {
+      window.location.href = "/";
+    };
+
+    // 社交链接跳转
+    const socialJump = (type) => {
+      switch (type) {
+        case "github":
+          window.location.href = "https://github.com/xgnw/";
+          break;
+        case "home":
+          window.location.href = "https://www.432600.xyz/";
+          break;
+        case "email":
+          window.location.href = "mailto:1223112302@qq.com";
+          break;
+        case "qq":
+          window.location.href = "tencent://message/?uin=1223112302";
+          break;
+        default:
+          break;
+      }
+    };
+  </script><script>
+    // 属性
+    let progressBackground = document.getElementById('progress-bar-background');
+    let progressBar = document.getElementById('progress-bar');
+    let loadingText = document.getElementById('loading-number');
+    let simulatedProgress = 0; // 用于模拟进度
+
+    // 改变进度条函数
+    const increaseProgress = (size) => {
+        if (simulatedProgress < size) {
+            simulatedProgress += Math.random() * 5; // 每次增加一个随机值，确保平滑增长
+            simulatedProgress = simulatedProgress > 100 ? 100 : simulatedProgress;
+            progressBar.style.width = simulatedProgress + '%';
+            loadingText.innerText = Math.round(simulatedProgress) + '%';
+        }
+    }
+
+    let show = true
+    if (show) {
+        // 添加事件
+        document.addEventListener('readystatechange', function () {
+            let avatar = document.querySelector('.avatar');
+            let textBox = document.querySelector('.text-box');
+            let links = document.querySelectorAll('a');
+
+            let interval;
+
+            if (document.readyState === 'interactive') {
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    increaseProgress(90)
+                }, 100);
+            }
+
+            let all = setInterval(() => {
+                if (document.readyState === 'complete' && simulatedProgress > 90) {
+                    clearInterval(interval);
+
+                    increaseProgress(100)
+
+                    let changeHide = setTimeout(() => {
+                        progressBackground.classList.add('hide');
+                        clearTimeout(changeHide);
+
+                        let changeNone = setTimeout(() => {
+                            progressBackground.style.display = 'none';
+
+                            avatar.classList.add('show');
+                            textBox.classList.add('show');
+
+                            for (let i = 0; i < links.length; i++) {
+                                let changeButton = setTimeout(() => {
+                                    links[i].classList.add('show');
+                                }, 200 * i);
+                            }
+                            clearTimeout(changeNone);
+                            clearInterval(all);
+                        }, 500);
+
+                    }, 1000);
+                }
+            })
+        });
+    }
+
+</script>
+
+</body>
+
+</html>

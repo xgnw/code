@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    user-select: none;
+
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    height: 92px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerContainer {
+    width: 1220px;
+    height: 92px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.sentence {
+    border-radius: 8px;
+
+    height: 30px;
+    width: auto;
+
+    padding: 8px;
+
+    position: absolute;
+    left: 0;
+
+    background: #f8f8f8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.hot {
+    border-radius: 40px;
+
+    height: 40px;
+    width: 80px;
+
+    position: absolute;
+    right: 80px;
+
+    background: #f8f8f8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.hot > img {
+    width: 30px;
+    height: 30px;
+
+    margin-right: 5px;
+}
+
+.community {
+    border-radius: 8px;
+
+    height: 30px;
+    width: 60px;
+
+    position: absolute;
+    right: 0;
+
+    background: #f8f8f8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.community:hover {
+    animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.statement > span {
+    font-size: 16px;
+}
+
+.nav {
+    border-radius: 8px;
+
+    width: 288px;
+    height: 52px;
+
+    background: #f8f8f8;
+}
+
+.nav > div {
+    border-radius: 8px;
+
+    width: 88px;
+    height: 40px;
+
+    margin-top: 6px;
+    margin-left: 6px;
+
+    float: left;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 3s ease;
+}
+
+.nav > div.showNav,
+.nav > div:hover {
+    background: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container > div {
+    display: none;
+
+    opacity: 1;
+    transition: opacity 3s ease;
+}
+
+.container > div.showContainer {
+    display: block;
+}
+
+.containerBox {
+    border-radius: 20px;
+
+    width: 1220px;
+
+    background: #f8f8f8;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    overflow-x: auto;
+}
+
+.typeBox {
+    width: 1180px;
+    height: 40px;
+
+    margin-left: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.typeBox > span {
+    font-size: 24px;
+
+    transition: transform 3s ease;
+}
+
+.typeBox > span:hover {
+    transform: rotate(360deg);
+}
+
+.cardBox {
+    border-radius: 20px;
+
+    width: 380px;
+    height: 140px;
+
+    background: #ffffff;
+
+    margin-top: 20px;
+    margin-left: 20px;
+
+    float: left;
+
+    transition: transform 3s ease;
+}
+
+.cardBox:hover {
+    transform: scale(1.06);
+}
+
+.cardBox > a {
+    text-decoration: none;
+
+    color: black;
+}
+
+.iconBox {
+    width: 100px;
+    height: 100px;
+
+    margin-top: 20px;
+    margin-left: 20px;
+
+    float: left;
+}
+
+.iconBox > img {
+    border-radius: 8px;
+
+    width: 50px;
+    height: 50px;
+
+    margin-top: 25px;
+    margin-left: 25px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.infoBox {
+    width: 220px;
+    height: 100px;
+
+    margin-top: 20px;
+    margin-left: 140px;
+}
+
+.titleBox {
+    width: 220px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+.titleBox > span {
+    font-size: 22px;
+}
+
+.describeBox {
+    width: 220px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+.describeBox > span {
+    font-size: 20px;
+}
+
+.segmentationContainer {
+    height: 20px;
+}
+
+footer {
+    height: 20px;
+}
+
+@media (max-width: 1240px) {
+    .containerBox {
+        width: 820px;
+    }
+
+    .headerContainer {
+        width: 820px;
+    }
+
+    .typeBox {
+        width: 780px;
+    }
+
+    .sentence {
+        display: none;
+    }
+
+    .hot {
+        left: 0;
+    }
+}

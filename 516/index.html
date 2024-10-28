@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>在线变量命名工具</title>
+    <meta content="在线代码命名工具,变量命名工具,变量命名规则库，酷库博客" name="keywords">
+    <meta content="这是一款简洁好用的在线的代码命名、方法命名工具、变量命名规则库，使用它可以让您轻松摆脱翻译软件的困扰，快速选择合适的变量名称用于开发工作中" name="description">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container clearfix">
+        <div id="nav"></div>
+        <div class="from-main">
+            <div class="alert alert-secondary" role="alert">
+                <div style="font-weight: 600;">变量命名工具</div>
+                <div style="font-size: 13px;">
+                    这是一款简洁好用的在线的代码命名、方法命名工具、变量命名规则库，使用它可以让您轻松摆脱翻译软件的困扰，快速选择合适的变量名称用于开发工作中
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="sname" value="" placeholder="输入要搜索的中文名称">
+            </div>
+        </div>
+        <button onclick="searchFn()" class="btn btn-primary" style="width: 100px;">搜索</button>
+        <button onclick="empty()" class="btn btn-outline-secondary" style="width: 100px;">清空</button>
+        <div class="rcode-cont">
+        </div>
+    </div>
+
+    <footer class="footer text-center" id="footer"></footer>
+
+    <script src="jquery.min.js"></script>
+    <script src="layer.js"></script>
+    <script src="include.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="do.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			@font-face {
+				font-family: 'CascadiaMono';
+				src: url('http://wp.cc/wp-content/themes/momaking/assets/fonts/CascadiaMono.ttf') format('truetype');
+				font-weight: 500;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'consola';
+				src: url('http://wp.cc/wp-content/themes/momaking/assets/fonts/consola.ttf') format('truetype');
+
+				font-weight: 500;
+				font-style: normal;
+			}
+			body {
+				margin: 0;
+				font-family: 'consola';
+				overflow: hidden;
+			}
+			.command-wrap {
+				width: 100%;
+				height: 100vh;
+				border-radius: 10px;
+				background-color: #2e2e2e;
+				overflow: hidden;
+			}
+			.command-head {
+				height: 40px;
+				display: flex;
+				align-items: flex-end;
+				justify-content: flex-start;
+				padding: 0 10px;
+			}
+			.command-head .item {
+				display: flex;
+				align-items: center;
+				min-width: 140px;
+				height: 30px;
+				background-color: #0c0c0c;
+				color: #f1f1f1;
+				font-size: 12px;
+				padding-left: 8px;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			.command-head .item .icon {
+				width: 16px;
+				height: 16px;
+				margin-right: 4px;
+			}
+			.command-content {
+				width: 100%;
+				height: calc(100% - 40px);
+				overflow-y: auto;
+				background-color: #0c0c0c;
+				color: #ccc;
+				font-size: 28px;
+				padding: 12px;
+				font-weight: 400;
+				position: relative;
+				white-space: normal;
+				box-sizing: border-box;
+			}
+			/* 滚动条 */
+			.command-content::-webkit-scrollbar {
+				width: 10px;
+			}
+			.command-content::-webkit-scrollbar-thumb {
+				background-color: #9f9f9f;
+				border-radius: 10px;
+			}
+			.command-content::-webkit-scrollbar-track {
+				background-color: #0c0c0c;
+				border-radius: 10px;
+			}
+			.cursor {
+				width: 2px;
+				height: 1.2rem;
+				background-color: #ccc;
+				position: relative;
+				top: 2px;
+				display: inline-block;
+				animation: blink 1s step-start infinite;
+				user-select: none;
+			}
+			@keyframes blink {
+				0%,
+				100% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0;
+				}
+			}
+			.command-content pre {
+				margin: 0 0 2px 0;
+				font-family: 'consola';
+				white-space: pre-wrap;
+				word-break: break-all;
+			}
+			.command-content pre .line {
+				padding-right: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="command-wrap">
+			<div class="command-head">
+				<div class="item">
+					<img class="icon" src="http://wp.cc/wp-content/themes/momaking/assets/images/powershell.png" />
+					<span>PowerShell</span>
+				</div>
+			</div>
+			<div class="command-content" tabindex="0">
+				<pre>PowerShell 7.4.5</pre>
+				<pre><span class="line">PS C:\Users\joysa\Desktop\command></span></pre>
+			</div>
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const commandContent = document.querySelector('.command-content')
+				let lastPre = commandContent.lastElementChild
+				let cursor
+				let dir = 'C:\\Users\\joysa\\Desktop\\command'
+				function initCursor() {
+					// 删除所有光标
+					const cursors = document.querySelectorAll('.cursor')
+					cursors.forEach((cursor) => {
+						cursor.remove()
+					})
+					let lastPre = commandContent.lastElementChild
+					cursor = document.createElement('div')
+					cursor.className = 'cursor'
+					cursor.style.left = '0px' // 更新光标位置
+					lastPre.appendChild(cursor)
+				}
+
+				function moveCursorToPosition(index) {
+					if (cursor) cursor.remove()
+					cursor = document.createElement('span')
+					cursor.className = 'cursor'
+					lastPre.insertBefore(cursor, lastPre.childNodes[index + 1] || null)
+				}
+
+				function newLine() {
+					const pre = document.createElement('pre')
+					const span = document.createElement('span')
+					span.className = 'line'
+					span.textContent = `PS ${dir}>`
+					pre.appendChild(span)
+					commandContent.appendChild(pre)
+					inputIndex = 0
+					initCursor()
+					lastPre = pre
+					autoScroll()
+				}
+
+				function curl(url) {
+					fetch(url)
+						.then((response) => response.text())
+						.then((data) => {
+							print(data)
+						})
+						.catch((error) => {
+							print(`curl: ${url} - ${error}`, '#e74856')
+						})
+						.finally(() => {
+							newLine()
+							initCursor()
+						})
+				}
+
+				function changeDir(a) {
+					dir = a.replace('cd ', '').replace('>', '').trim()
+					newLine()
+				}
+
+				function autoScroll() {
+					commandContent.scrollTop = commandContent.scrollHeight
+				}
+
+				async function print(content, color = '#ccc') {
+					const pre = document.createElement('pre')
+					pre.textContent = content
+					// 设置配置
+					pre.style.color = color
+					commandContent.appendChild(pre)
+					autoScroll()
+					return pre
+				}
+
+				function getCommand(dom) {
+					var _dir = dom.querySelector('.line').textContent.split(' ')[1].replace('>', '')
+					var spans = dom.querySelectorAll('span')
+					var command = ''
+					spans.forEach((span) => {
+						if (span.className !== 'line') {
+							command += span.textContent
+						}
+					})
+					return {
+						dir: _dir,
+						command,
+					}
+				}
+				let isExecuting = false
+				async function execCommand(dir, command) {
+					isExecuting = true
+					return new Promise((resolve) => {
+						// 模拟异步执行
+						setTimeout(() => {
+							switch (command) {
+								case 'ls':
+									print(`ls: ${dir}`)
+									break
+								case 'dir':
+									print(`Directory: ${dir}
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----            2024/7/3    15:20                .cache
+d----           2024/9/11    14:18                .codeverse
+d----           2024/5/14     9:43                .conda
+d----           2024/5/24    14:17                .config
+d----           2024/8/27    17:17                .cursor
+d----           2024/8/27    17:12                .cursor-tutor
+d----           2024/8/27    17:12                .cursor-tutor-1
+d----           2024/8/27    17:12                .cursor-tutor-2
+d----           2024/7/24     9:58                .ipython
+d----           2024/7/24    10:26                .jupyter
+d----           2024/9/21    11:12                .lingma
+d----           2024/9/11    14:19                .marscode
+d----           2024/7/24    15:09                .matplotlib
+d----           2024/9/18     8:52                .MUMUVMM
+d----           2024/8/26    14:56                .redhat
+d----            2024/9/5    16:34                .ssh
+d----           2024/5/14     8:34                .vscode
+d-r--           2024/5/13    19:09                Contacts
+d-r--           2024/9/20    18:30                Desktop
+d-r--           2024/9/18     8:54                Documents
+d-r--           2024/9/20    18:02                Downloads
+d-r--           2024/5/13    19:09                Favorites
+d----           2024/5/14     8:30                Intel
+d-r--           2024/5/13    19:09                Links
+d----           2024/9/12    14:12                miniforge3
+d-r--           2024/9/18    13:54                Music
+d----            2024/6/4    10:17                node_modules
+lar--           2024/9/14    11:16                OneDrive
+d-r--            2024/9/3    11:29                Pictures
+d-r--           2024/5/13    19:09                Saved Games
+d-r--           2024/5/14     8:57                Searches
+d-r--            2024/9/3     8:49                Videos
+-a---           2024/6/24    14:19             43 .codex
+-a---           2024/5/24    14:57            168 .gitconfig
+-a---            2024/6/4    10:16              0 .node_repl_history
+-a---            2024/8/2    12:00             40 .npmrc
+-a---           2024/5/23    16:35           7499 .php-cs-fixer.php
+-a---            2024/9/9    17:32           3043 .viminfo
+-a---           2024/7/31     9:17           4338 environment.yml
+-a---           2024/8/20    17:29         179577 java_error_in_pycharm64_12672.log
+-a---            2024/7/3    15:23         264092 java_error_in_pycharm64_19996.log
+-a---           2024/9/14    11:18            763 mumu_boot.txt
+-a---            2024/6/4    10:17           2107 package-lock.json
+-a---            2024/6/4    10:17             62 package.json`)
+									break
+								case 'clear':
+									commandContent.innerHTML = ''
+									break
+								default:
+									if (command !== '') {
+										if (command.startsWith('cd ')) {
+											changeDir(command)
+											isExecuting = false
+											return
+										} else if (command.startsWith('curl ')) {
+											curl(command.replace('curl ', ''))
+											isExecuting = false
+											return
+										}
+										var dom = print(
+											`${command}: The term '${command}' is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`,
+											'#e74856',
+										)
+									}
+									break
+							}
+							isExecuting = false
+							resolve() // 执行完成时调用 resolve
+						}, 250) // 模拟延迟
+					})
+				}
+
+				initCursor()
+				let inputIndex = 0
+
+				commandContent.addEventListener('click', () => {
+					initCursor()
+				})
+				// 禁用右键菜单
+				commandContent.addEventListener('contextmenu', (event) => {
+					event.preventDefault()
+				})
+
+				document.addEventListener('keydown', async (event) => {
+					if (isExecuting) return
+					if (event.key === 'c' && (navigator.platform.match('Mac') ? event.metaKey : event.ctrlKey)) {
+						newLine(dir)
+						return
+					}
+					if (event.key === 'v' && (navigator.platform.match('Mac') ? event.metaKey : event.ctrlKey)) {
+						for (let i = 0; i < 10; i++) {
+							await print('粘...粘不出来')
+							await new Promise((resolve) => setTimeout(resolve, 50))
+						}
+						newLine()
+						return
+					}
+					if (event.key === 'Enter') {
+						const { dir, command } = getCommand(lastPre)
+						await execCommand(dir, command) // 等待命令执行完成
+						newLine()
+					} else if (event.key.length === 1) {
+						const span = document.createElement('span')
+						span.textContent = event.key
+						lastPre.insertBefore(span, cursor)
+						inputIndex++
+						moveCursorToPosition(inputIndex)
+					} else if (event.key === 'Backspace') {
+						if (inputIndex > 0) {
+							const previousElement = lastPre.childNodes[inputIndex]
+							if (previousElement && previousElement.className !== 'line') {
+								previousElement.remove()
+								inputIndex--
+								moveCursorToPosition(inputIndex)
+							}
+						}
+					} else if (event.key === 'Delete') {
+						if (inputIndex < lastPre.childNodes.length - 1) {
+							if (cursor.nextSibling) {
+								cursor.nextSibling.remove()
+							}
+						}
+					} else if (event.key === ' ') {
+						event.preventDefault()
+						const spaceSpan = document.createElement('span')
+						spaceSpan.textContent = ' '
+						lastPre.insertBefore(spaceSpan, cursor)
+						inputIndex++
+						moveCursorToPosition(inputIndex)
+					} else if (event.key === 'ArrowLeft') {
+						if (inputIndex > 0) {
+							inputIndex--
+							moveCursorToPosition(inputIndex)
+						}
+					} else if (event.key === 'ArrowRight') {
+						if (inputIndex < lastPre.childNodes.length - 1) {
+							inputIndex++
+							moveCursorToPosition(inputIndex)
+						}
+					} else if (event.key === 'Meta') {
+						// todo: 全选
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <title>
+    短域名  </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico" media="screen">
+  <link rel="stylesheet" href="cdn/expire-1-M/mdui/0.4.3/css/mdui.min.css">
+  <script src="cdn/expire-1-M/mdui/0.4.3/js/mdui.min.js"></script>
+  <script src="1.2.js" type="module"></script>
+  </head>
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <style>
+    a {
+      text-decoration:none
+    }
+    a:hover {
+      text-decoration:none
+    }
+  </style>
+  <body background="/assets/img/background.png" class="mdui-drawer-body-left mdui-appbar-with-toolbar">
+    <div class="mdui-toolbar mdui-color-theme">
+      <span class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: '#main-drawer'}">
+        <i class="mdui-icon material-icons">menu</i>
+      </span>
+      <a href="" class="mdui-typo-title">8g短域名</a>
+    </div></body></header>
+    <div class="mdui-drawer" id="main-drawer">
+      <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 68px;">
+        <div class="mdui-list">
+          <a href="/" class="mdui-list-item">
+            <i class="mdui-list-item-icon mdui-icon material-icons">filter_none</i>
+             主页
+          </a>
+          <a href="./help.php" class="mdui-list-item">
+          <i class="mdui-list-item-icon mdui-icon material-icons">help_outline</i>
+           帮助
+        </a>
+          </div>
+        </div>
+      </div>
+    
+  
+<br>
+<div class="mdui-container doc-container">
+    <div class="mdui-typo">
+        <h2>短域</h2>
+        <div class="mdui-textfield">
+            <textarea id="content" class="mdui-textfield-input" type="text" placeholder="*请输入长链接或密语"></textarea>
+        </div>
+        <div style="float: left; width: 49.2%;" class="mdui-textfield">
+            <input id="shorturl" class="mdui-textfield-input" type="text" placeholder="请输入自定义短链(可选)">
+        </div>
+        <div style="float: right; width: 49.2%;" class="mdui-textfield">
+            <input id="passwd" class="mdui-textfield-input" type="text" placeholder="请输入加密密码(可选)">
+        </div>
+        
+        <button onclick="submit();" id="submit" class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple">
+          <i class="mdui-icon material-icons">send</i>
+        </button>
+        <label class="mdui-radio">
+          <input onclick='change("shorturl")' type="radio" name="type" id="type" value="shorturl" checked="">
+          <i class="mdui-radio-icon"></i>短域
+        </label>
+          
+        <label class="mdui-radio">
+          <input onclick='change("passmessage")' type="radio" name="type" id="type" value="passmessage">
+          <i class="mdui-radio-icon"></i>密语
+        </label>
+    </div>
+</div>
+<script>
+var $ = mdui.JQ;
+
+function change(type)
+{
+  if(type == 'shorturl')
+  {
+    $('#content').removeAttr('rows');
+    $('#content').removeAttr('cols');
+  }else{
+    $('#content').attr('rows','10');
+    $('#content').attr('cols','10');
+  }
+}
+
+function submit(){
+  type = $('input[name="type"]:checked').val();
+  content = $('#content').val();
+  shorturl = $('#shorturl').val();
+  passwd = $('#passwd').val();
+  $('#submit').attr('disabled',true)
+  $('#submit').text('处理中...')
+  $.ajax({
+    method: 'post',
+    timeout: 10000,
+    url: 'submit.php',
+    data: {
+      type: type,
+      content: content,
+      shorturl: shorturl,
+      passwd: passwd
+    },
+    success: function(data)
+    {
+      if(data == 200)
+      {
+        mdui.snackbar({
+         message: '✔️缩短成功!',
+         position: 'right-top',
+         timeout: 0
+       });
+       window.setTimeout("window.location='shorturl.php'",2000);
+      }else{
+        mdui.snackbar({
+         message: '❌缩短失败: <br/>提示信息: ' + data,
+         position: 'right-top'
+       });
+      }
+    },
+    complete: function(xhr,textStatus) 
+    {
+      $('#submit').html('<i class="mdui-icon material-icons">send</i>')
+      $('#submit').removeAttr('disabled');
+      if(textStatus == 'timeout')
+      {
+        mdui.snackbar({
+         message: '❌请求超时!',
+         position: 'right-top'
+       });
+      }
+    }
+  });
+}
+
+</script>
+<div class="mdui-container doc-container">
+    <div class="mdui-typo">
+         <h2>帮助</h2>
+         1.输入短域请加上http(s)://<br>
+         2.中文域名请手动Punycode编码后再使用<br>
+         3.网址最长支持1000字符<br>
+         4.密语最长支持3000字符(合1000汉字)<br>
+         5.手动填写短域以及密码为可选项目<br>
+         6.密码限制2-20位(数字密码组合)/短域限制输入4位<br>
+         7.其余详见菜单-帮助界面
+    </div>
+</div>
+
+<br>
+<footer>
+    <script>
+    fetch('https://v1.hitokoto.cn')
+        .then(function (res) {
+        return res.json();
+    })
+        .then(function (data) {
+        var hitokoto = document.getElementById('hitokoto');
+        hitokoto.innerText = data.hitokoto;
+    })
+        .
+    catch (function (err) {
+        console.error(err);
+    })
+    console.log("\n %c 8g短域名 %c Powered by 8g.lol ", "color:#444;background:#eee;padding:5px 0;", "color:#eee;background:#444;padding:5px 0;");
+    </script>
+    
+    <center>
+
+        <div class="mdui-divider"></div>
+        <p>
+        <div class="footer-copyright">Copyright © 
+            2023 <a class="mdui-text-color-grey-800" href="">8g短域名</a> All rights reserved.
+        </div>
+       
+        
+</center></footer></html>

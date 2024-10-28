@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vi</title>
+  <meta name="Description" content="Home Page of iissnan">
+  <meta name="color-scheme" content="dark light">
+  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+      <link rel="stylesheet" type="text/css" href="css/dark.css" id="css">
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css">
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/dark.js"  type="text/javascript"></script>
+ <script>
+	jQuery(document).ready(function() {
+	var QRBox	=	$('#QRBox');
+	var MainBox	=	$('#MainBox');
+	var AliPayQR	=	"/zf/zfb.png"; //支付宝二维码图片地址
+	var WeChanQR	=	"/zf/wx.png"; //微信二维码图片地址
+	var QQQR     	=	"/zf/QQ.png"; //QQ二维码图片地址
+
+	
+
+	function showQR(QR) {
+		if (QR) {
+			MainBox.css('background-image','url(' + QR + ')');
+		}
+		$('#DonateText,#donateBox,#github').addClass('blur');
+		QRBox.fadeIn(300,function(argument) {
+			MainBox.addClass('showQR');
+		});
+	}
+
+	$('#donateBox>li').click(function(event) {
+		var thisID	=	$(this).attr('id');
+	if (thisID === 'AliPay') {
+			showQR(AliPayQR);
+		} else if (thisID === 'WeChat') {
+			showQR(WeChanQR);
+		} else if (thisID === 'QQ') {
+			showQR(QQQR);
+		
+		}
+	});
+
+	MainBox.click(function(event) {
+		MainBox.removeClass('showQR').addClass('hideQR');
+		setTimeout (function(a) {
+			QRBox.fadeOut(300,function(argument) {
+				MainBox.removeClass('hideQR');
+			});
+			$('#DonateText,#donateBox,#github').removeClass('blur');
+		},600);
+
+	});
+});
+</script>
+
+   <style>
+        .zuobiao i {
+            line-height: 1.8;
+            margin-right: 6px;
+            vertical-align: middle;
+            background-image: url(images/zuobiao.svg);
+            background-size: 100%;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            margin-top: -2px;
+        }
+       
+    </style>
+    <style>
+     .user-warp img {
+            width:70px;
+            border-radius:30%;
+           }
+	    
+/*.dark-theme .user-warp img {
+            width:70px;
+            border-radius:100%;
+            animation: light 5s ease-in-out infinite;
+            transition: 0.5s;}*/
+
+
+	
+	    @keyframes light {
+ 0%{box-shadow: 0 0 4px #f00;}
+ 25%{box-shadow: 0 0 5px #0f0;} 
+ 50%{box-shadow: 0 0 4px #00f;}
+ 75%{box-shadow: 0 0 5px #0f0;} 
+ 100%{box-shadow: 0 0 4px #f00;}
+}
+      </style> 
+</head>
+
+<body>
+<div class="wrapper">
+<header>
+    <nav class="navbar" id="mobile-toggle-theme">
+        <div class="container"></div>
+    </nav>
+  <div class="vi">
+    <h1 class="animate-slide-in-down">Vi</h1>
+    <div class="quote">
+      <span class="quote-line quote-line-start animate-slide-in-left"></span>
+      <span class="quote-icon quote-icon-start animate-slide-in-down">
+        <i class="icon icon-quotes-left"></i>
+      </span>
+      <p class="quote-content animate-slide-in-down">不积跬步，无以至千里。不积小流，无以成江海。</p>
+      <p class="quote-author animate-slide-in-down">《劝学篇》—— <em>荀子</em></p>
+      <span class="quote-icon quote-icon-end animate-slide-in-up">
+        <i class="icon icon-quotes-right"></i>
+      </span>
+      <span class="quote-line quote-line-end animate-slide-in-right"></span>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/iissnan" class="animate-slide-in-down">GitHub</a>
+      <a href="https://notes.iissnan.com" class="animate-slide-in-down">Notes</a>
+      <a href="https://douban.com/people/iissnan" class="animate-slide-in-down">DouBan</a>
+      <a href="https://weibo.com/iissnan" class="animate-slide-in-down">WeiBo</a>
+    </div>
+    
+<center>
+
+<div id="header">
+</div>
+<div id="main">
+	<div class="demo">
+		
+		
+		
+        <div id="player3" class="aplayer">
+            <pre class="aplayer-lrc-content">
+
+                [00:00.00]毛不易 - 像我这样的人
+[00:00.00] 作词 : 毛不易
+[00:01.00] 作曲 : 毛不易
+[00:02.00] 编曲 : 赵兆/宋涛
+[00:03.00] 制作人 : 李健/赵兆
+[00:09.84]
+[00:15.00]像我这样优秀的人
+[00:18.77]本该灿烂过一生
+[00:22.62]怎么二十多年到头来
+[00:26.70]还在人海里浮沉
+[00:30.24]
+[00:30.35]像我这样聪明的人
+[00:34.50]早就告别了单纯
+[00:38.38]怎么还是用了一段情
+[00:42.36]去换一身伤痕
+[00:44.68]
+[00:46.15]像我这样迷茫的人
+[00:49.84]像我这样寻找的人
+[00:53.80]像我这样碌碌无为的人
+[00:57.59]你还见过多少人
+[01:06.91]
+[01:18.64]像我这样庸俗的人
+[01:22.83]从不喜欢装深沉
+[01:26.54]怎么偶尔听到老歌时
+[01:30.62]忽然也晃了神
+[01:34.38]像我这样懦弱的人
+[01:38.24]凡事都要留几分
+[01:42.20]怎么曾经也会为了谁
+[01:45.95]想过奋不顾身
+[01:47.68]
+[01:49.87]像我这样迷茫的人
+[01:53.77]像我这样寻找的人
+[01:57.49]像我这样碌碌无为的人
+[02:01.45]你还见过多少人
+[02:04.69]
+[02:05.46]像我这样孤单的人
+[02:09.20]像我这样傻的人
+[02:13.26]像我这样不甘平凡的人
+[02:16.99]世界上有多少人
+[02:21.58]
+[02:26.76]像我这样迷茫的人
+[02:30.51]像我这样寻找的人
+[02:34.37]像我这样碌碌无为的人
+[02:38.23]你还见过多少人
+[02:41.24]
+[02:42.00]像我这样孤单的人
+[02:46.10]像我这样傻的人
+[02:49.97]像我这样不甘平凡的人
+[02:53.65]世界上有多少人
+[02:56.63]
+[02:59.63]像我这样莫名其妙的人
+[03:05.43]会不会有人心疼
+[03:14.05]
+[03:25.94]
+[03:26.04] 口琴 : 刘晓光
+[03:26.15] 键盘 : 赵兆
+[03:26.26] 吉他 : 薛峰
+[03:26.37] 贝斯 : 韩阳
+[03:26.48] 鼓 : 武勇恒
+[03:26.59] 弦乐 : 国际首席爱乐乐团International Master Philharmonic Orchestra
+[03:26.70] 混音 : 周天澈
+[03:26.81] 母带 : Joe LaPorta .（Sterling Sound. NY）
+[03:26.92] 录音棚 : 55TEC . Beijing
+[03:27.03] 录音 : 李游/李杨
+[03:27.13] 人声录音 : 李杨
+[03:27.24] 人声编辑 : 李杨
+[03:27.35] 录音助理 : 郭舒文/邢铜
+[03:27.46] 制作发行 : 哇唧唧哇×智慧大狗
+ 
+            </pre>
+        </div>
+	</div>
+</div>
+<script>
+	var ap3 = new APlayer({
+		element: document.getElementById('player3'),//样式1
+		narrow: false,
+		autoplay: false,
+		showlrc: true,
+		music: {
+            title: '像我这样的人',
+			author: '毛不易',
+			url: './bgm.mp3',
+			pic: 'http://p1.music.126.net/vmCcDvD1H04e9gm97xsCqg==/109951163350929740.jpg?param=300x300'
+        }
+	});
+	ap3.init();
+</script>
+
+	</center> 
+            <br>
+    <div class="location">
+
+      <span class="location-icon animate-slide-in-up">
+        <i class="icon icon-map-pin"></i>
+      </span>
+      <span class="location-text animate-slide-in-down">XiaMen - China</span>
+                    <span style="margin-left: 30px">
+                            <input id="switch_default" type="checkbox" class="switch_default">
+                            <label for="switch_default" class="toggleBtn"></label></span>
+    </div>
+    <div class="relocating">
+      Navigating to: <span class="relocate-location"></span>...
+    </div>
+  </div>                
+                 <center>
+	<ul id="donateBox" class="list pos-f tr3">
+		<li id="AliPay">AliPay</li>
+		<li id="WeChat">WeChat</li>
+		<li id="QQ">QQ</li>
+		
+	</ul>
+</center>
+<footer id="footer" class="footer">        	
+		 <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+</footer>
+  <script src="assets/vendors/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function () {
+      var SLIDE_IN_DOWN = { opacity: 1, top: 0 };
+      var SLIDE_IN_UP = { opacity: 1, bottom: 0 };
+      var SLIDE_IN_LEFT = { left: 0 };
+      var SLIDE_IN_RIGHT = { right: 0 };
+
+      registerCheatCode();
+      executeAnimations();
+
+      function executeAnimations() {
+        $.when()
+          .then(animateTitle)
+          .then(animateQuote)
+          .then(animateLinks)
+          .then(animateLocation);
+      }
+
+      function animateTitle() {
+        return animate('h1', SLIDE_IN_DOWN);
+      }
+
+      function animateQuote() {
+        return $.when(
+          animate('.quote-line-start', SLIDE_IN_LEFT),
+          animate('.quote-line-end',SLIDE_IN_RIGHT),
+          animate('.quote-icon-start', SLIDE_IN_DOWN),
+          animate('.quote-icon-end', SLIDE_IN_UP)
+        )
+          .then(function () {
+            return animate('.quote-content', SLIDE_IN_DOWN);
+          })
+          .then(function () {
+            return animate('.quote-author', SLIDE_IN_DOWN);
+          });
+      }
+
+      function animateLinks() {
+        var DELAY_STEP = 200;
+        var elements = $('.links a');
+        var concurrent = $.makeArray(elements)
+          .map(function (element, index) {
+            return animate(element, SLIDE_IN_DOWN, index * DELAY_STEP);
+          });
+
+        return $.when.apply($, concurrent);
+      }
+
+      function animateLocation() {
+        return $.when(
+          animate('.location-icon', SLIDE_IN_UP),
+          animate('.location-text', SLIDE_IN_DOWN)
+        );
+      }
+
+      function animate(selector, properties, delay, options) {
+        delay = delay || 0;
+        return $(selector).delay(delay)
+          .animate(properties, options)
+          .promise();
+      }
+
+      function registerCheatCode() {
+        $(document.body).on('keydown', function (event) {
+          var KEY_B = 66;
+
+          if (event.which === KEY_B) {
+            $('.relocate-location').text('Bookmark Page');
+            $('.relocating').css('opacity', 1);
+
+            window.setTimeout(function () {
+              window.location.href = '/bookmarks.html';
+            }, 1000);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

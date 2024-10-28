@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        789资源网-专注于网络资源分享    </title>
+    <meta name="keywords" content="
+						789影视,茶杯狐电影,VIP视频解析">
+    <meta name="description" content="
+							789影视资源网站,茶杯狐电影,VIP视频解析,在线解析会员视频。">
+    
+    <!-- jQuery -->
+    <script src="cdn/expire-1-y/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <!-- Izitoast -->
+    <link rel="stylesheet" href="cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css">
+    <script type="text/javascript" src="cdn/expire-1-y/izitoast/1.4.0/js/iziToast.min.js"></script>
+    <!-- IE Out -->
+    <script>
+        if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
+            "https://www.imsyy.top/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location
+                .href);
+    </script>
+</head>
+<body>
+<!--加载动画-->
+<div id="loading-box">
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+        <div class="loading-word">
+            <p class="loading-title"></p>
+            <span id="loading-text">加载中</span>
+        </div>
+    </div>
+</div>
+<!-- 背景图片 -->
+<div class="bg-all">
+    <img id="bg" onerror="this.classList.add('error');">
+    <div class="cover"></div>
+</div>
+<!-- 主体内容 -->
+<section id="section" class="section">
+    <div id="content">
+        <div class="con">
+            <!-- 时间天气 -->
+            <div class="tool-all">
+                <div class="time">
+																			<span id="time_text">00
+																				<span id="point">:</span>00
+																			</span>
+                    <span id="day">0 月 00 日 周一</span>
+                </div>
+            </div>
+            <!-- 搜索框 -->
+            <div class="close_sou"></div>
+            <div class="sou">
+                <form class="search" action="javascript:;" target="_Blank">
+                    <div class="all-search">
+                        <div class="se" title="点击切换搜索引擎">
+                            <i id="icon-se" class="iconfont icon-baidu"></i>
+                        </div>
+                        <input class="wd" type="text" name="wd" placeholder="点击时间 秘密展开" autocomplete="off">
+                        <div class="sou-button">
+                            <div class="s" id="s-button">
+                                <i id="icon-sou" class="iconfont icon-sousuo"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" id="search-submit" style="display: none;">
+                </form>
+                <div id="keywords" style="display: none;"></div>
+                <div class="search-engine" style="display: none;">
+                    <div class="search-engine-list">
+                        <div class="se-li">
+                            <a class="se-li-text" data-url="https://www.baidu.com/s" data-name="wd" data-icon="iconfont icon-baidu">
+                                <i id="icon-sou-list" class="iconfont icon-sousuo"></i>
+                                <span>百度</span>
+                            </a>
+                        </div>
+                        <div class="se-li" data-url="https://cn.bing.com/search" data-name="q" data-icon="iconfont icon-bing">
+                            <a class="se-li-text">
+                                <i id="icon-sou-list" class="iconfont icon-bing"></i>
+                                <span>必应</span>
+                            </a>
+                        </div>
+                        <div class="se-li" data-url="https://www.google.com/search" data-name="q" data-icon="iconfont icon-google">
+                            <a class="se-li-text">
+                                <i id="icon-sou-list" class="iconfont icon-google"></i>
+                                <span>谷歌</span>
+                            </a>
+                        </div>
+                        <div class="se-li" data-url="https://www.sogou.com/web" data-name="query" data-icon="iconfont icon-bing">
+                            <a class="se-li-text">
+                                <i id="icon-sou-list" class="iconfont icon-sougousousuo"></i>
+                                <span>搜狗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 书签页 -->
+            <div class="mark" style="display: none;">
+                <div class="tab">
+                                            <div class="tab-item
+																						active">
+                            工具                        </div>
+                                            <div class="tab-item
+																						">
+                            技术                        </div>
+                                            <div class="tab-item
+																						">
+                            建站                        </div>
+                                            <div class="tab-item
+																						">
+                            影视                        </div>
+                                            <div class="tab-item
+																						">
+                            推荐                        </div>
+                                    </div>
+                <div class="content products">
+                    <!-- 常用 -->
+                                        <div class="mainCont selected">
+                        <div class="quick-alls">
+                        
+                            <div class="quicks">
+                                                                      <a href="./qb/index.html" target="_blank">
+                                    Q绑在线查 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://c.runoob.com/" target="_blank">
+                                    菜鸟工具  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.uupoop.com" target="_blank">
+                                    在线PS软件 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://m.speedtest.cn/" target="_blank">
+                                    专业测网速 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.uugai.com/" target="_blank">
+                                    U钙网设计 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://cli.im" target="_blank">
+                                    草料二维码 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.z4a.net" target="_blank">
+                                    Z4A图床 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://tutjiexi.com/" target="_blank">
+                                    抖音去水印 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://seo.chinaz.com/" target="_blank">
+                                    站长工具  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://bing.ioliu.cn" target="_blank">
+                                    必应壁纸  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.wenshushu.cn" target="_blank">
+                                    文叔叔传文 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://1.1.1.1/" target="_blank">
+                                    免费VPN </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://seo.juziseo.com/" target="_blank">
+                                    桔子SEO </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://up.woozooo.com" target="_blank">
+                                    蓝奏云存储 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.crxsoso.com" target="_blank">
+                                    扩展插件  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://tongji.baidu.com" target="_blank">
+                                    百度统计  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.toolnb.com" target="_blank">
+                                    爱资料工具 </a>
+                                                                </div>
+                                                    </div>
+                    </div>
+                                            <div class="mainCont ">
+                        <div class="quick-alls">
+                        
+                            <div class="quicks">
+                                                                      <a href="https://www.52pojie.cn" target="_blank">
+                                    吾爱破解  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.kkzyw.vip/" target="_blank">
+                                    可可资源网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.zxki.cn" target="_blank">
+                                    酷库博客  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.afxw5.com/" target="_blank">
+                                    爱分享资源 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.52zyw1.com/" target="_blank">
+                                    我爱辅助网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.iqnew.com/" target="_blank">
+                                    爱Q生活网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="http://www.678cn.com" target="_blank">
+                                    678辅助 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.xkwo.com" target="_blank">
+                                    小K娱乐网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.x6d.com" target="_blank">
+                                    小刀娱乐网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.xgw5.com" target="_blank">
+                                    小高教学网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.kxdao.net/" target="_blank">
+                                    科学刀论坛 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.fgba.net/" target="_blank">
+                                    新富贵论坛 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.ghxi.com/" target="_blank">
+                                    果核剥壳  </a>
+                                                                </div>
+                                                    </div>
+                    </div>
+                                            <div class="mainCont ">
+                        <div class="quick-alls">
+                        
+                            <div class="quicks">
+                                                                      <a href="https://www.bt.cn/" target="_blank">
+                                    宝塔面板  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.xp.cn" target="_blank">
+                                    小皮面板  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://github.com" target="_blank">
+                                    GitHu </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.dedecms.com/" target="_blank">
+                                    织梦官方网 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.dkewl.com/" target="_blank">
+                                    刀客源码  </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.emlog.net/" target="_blank">
+                                    emlog </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://wordpress.com/" target="_blank">
+                                    WordP </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.zblogcn.com/" target="_blank">
+                                    ZBlog </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.seacms.net/" target="_blank">
+                                    海洋CMS </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.maccms.la/" target="_blank">
+                                    苹果CMS </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.huzhan.com/" target="_blank">
+                                    互站网   </a>
+                                                                </div>
+                                                    </div>
+                    </div>
+                                            <div class="mainCont ">
+                        <div class="quick-alls">
+                        
+                            <div class="quicks">
+                                                                      <a href="http://6.789bh.com/" target="_blank">
+                                    VIP影院 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://duoju.vip/" target="_blank">
+                                    蓝光影院 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://dianyi.ng/" target="_blank">
+                                    电影先生 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://555dy.com/" target="_blank">
+                                    555电影 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://jiesuo.tk" target="_blank">
+                                    国际版抖音 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://zn.789bh.com" target="_blank">
+                                    看小姐姐 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.xierizhi.cn" target="_blank">
+                                    免VIP影 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://www.wandou.la" target="_blank">
+                                    豌豆PRO </a>
+                                                                </div>
+                                                    </div>
+                    </div>
+                                            <div class="mainCont ">
+                        <div class="quick-alls">
+                        
+                            <div class="quicks">
+                                                                      <a href="http://www.pacificrack.com" target="_blank">
+                                    免实名主机 </a>
+                                                                </div>
+                            
+                            <div class="quicks">
+                                                                      <a href="https://bill.hostdare.com" target="_blank">
+                                    免实名服务 </a>
+                                                                </div>
+                                                    </div>
+                    </div>
+                                            </div>
+                </div>
+                <!-- 设置图标 -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('/your-landscape-image.jpg') no-repeat center center fixed; 
+      background-size: cover; /* 确保你有一个高分辨率的背景图像 */
+    }
+    .text-link {
+      position: fixed; /* 固定位置，保持在滚动过程中始终可见 */
+      top: 10px; /* 调整垂直位置 */
+      color: #DDD; /* 文本颜色更暗 */
+      text-align: center; /* 文本居中 */
+      font-size: 15px; /* 文本大小 */
+      text-decoration: none; /* 无下划线 */
+      background-color: transparent; /* 透明背景 */
+      transition: color 0.3s; /* 颜色变化过渡动画 */
+    }
+    .text-link:hover {
+      color: #FFF; /* 悬停时文本颜色变亮 */
+      text-decoration: underline; /* 悬停时下划线显示，作为点击提示 */
+    }
+    .text-link-left {
+      left: 10px; /* 定位左侧文本 */
+    }
+    .text-link-right {
+      right: 10px; /* 定位右侧文本 */
+    }
+  </style>
+
+  <a href="index1.html" class="text-link text-link-left">美女</a> <!-- 替换成你的左侧链接地址和文本 -->
+  <a href="index.html" class="text-link text-link-right">影视</a> <!-- 替换成你的右侧链接地址和文本 -->
+
+                <!-- 设置页 -->
+        <!-- 版权信息 -->
+        <div class="foot">
+            <div class="power">789资源 © 2020
+
+                <script>
+                    document.write(' - ' + (new Date()).getFullYear())
+                </script>
+                <a href=""></a>
+                <!-- 以下信息请不要修改哦 -->
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2000000001号</a>
+            </div>
+        </div>
+</div></div></section>
+<!-- 主体内容结束 -->
+
+<!-- noscript -->
+<noscript>
+    <div class="noscript fixed-top">请开启 JavaScript</div>
+</noscript>
+<!-- JS -->
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/set.js"></script>
+<script type="text/javascript" src="js/js.cookie.js"></script>
+<script>
+    //加载完成后执行
+    window.addEventListener('load', function () {
+        //载入动画
+        $('#loading-box').attr('class', 'loaded');
+        $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");
+        $('#section').css("cssText", "opacity: 1;transition: ease 1.5s;");
+        $('.cover').css("cssText", "opacity: 1;transition: ease 1.5s;");
+
+        //用户欢迎
+        iziToast.settings({
+            timeout: 3000,
+            backgroundColor: '#ffffff40',
+            titleColor: '#efefef',
+            messageColor: '#efefef',
+            progressBar: false,
+            close: false,
+            closeOnEscape: true,
+            position: 'topCenter',
+            transitionIn: 'bounceInDown',
+            transitionOut: 'flipOutX',
+            displayMode: 'replace',
+            layout: '1'
+        });
+        setTimeout(function () {
+            iziToast.show({
+                title: hello,
+                message: '欢迎来到 789资源网'
+            });
+        }, 800);
+
+        //中文字体缓加载-此处写入字体源文件
+        //先行加载简体中文子集，后续补全字集
+        //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
+        const font = new FontFace(
+            "MiSans",
+            "url(" + "./font/MiSans-Regular.woff2" + ")"
+        );
+        document.fonts.add(font);
+
+    }, false)
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打赏</title>
+    <style>
+        .flex-footer {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 206px;
+            background: #fff;
+            box-shadow: 0px 0px 5px 3px #409eff;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 15px;
+        }
+        .text-above-image {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: black; 
+        }
+        .radio-label {
+            color: black; 
+        }
+    </style>
+    <script src="dist/js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="flex-footer" id="rewardComponent">
+        <div class="text-above-image">您是想给我打赏吗</div>
+        <img id="ewm" src="img/wx.png" width="120px" height="120px">
+        <div style="margin-top: 5px;">
+            <label class="radio-label"><input name="pay" type="radio" value="wx" checked="checked" onclick="changePayment('wx')">微信</label>
+            <label style="margin-left: 3px;" class="radio-label"><input name="pay" type="radio" value="zfb" onclick="changePayment('zfb')">支付宝</label>
+        </div>
+        <div style="height: 40px; background: rgba(0,0,0,0);"></div>
+    </div>
+    <script language="javascript" type="text/javascript">
+        function changePayment(method) {
+            var obj = document.getElementById("ewm");
+            if (method === 'zfb') {
+                obj.src = `./img/zfb.JPG`;
+            } else if (method === 'wx') {
+                obj.src = `./img/wx.png`;
+            }
+        }
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            var rewardComponent = document.getElementById("rewardComponent");
+            rewardComponent.style.display = "block";
+        });
+        document.addEventListener('click', function (e) {
+            var rewardComponent = document.getElementById("rewardComponent");
+            if (!rewardComponent.contains(e.target)) {
+                rewardComponent.style.display = "none";
+            }
+        });
+    </script>
+    
+</body>
+</html>
+
+
+</body>
+</html>

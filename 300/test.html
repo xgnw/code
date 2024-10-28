@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小威同学的世界</title>
+    <link rel="stylesheet" href="./test.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="progress-bar-background">
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+            <div class="progress-text">
+                <p class="loading-text">>>> LOADING - <span id="loading-number">0%</span></p>
+                <p class="loading-title">正在加载-小威同学的世界</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="contain">
+            <div class="avatar">
+                <img src="http://pic.ksamar.top/i/2024/08/10/66b66ef4ec242.jpg" alt="user.jpg" class="user-img">
+            </div>
+            <div class="text-box">
+                <p class="title">KSaMar - 小威同学</p>
+                <p class="sub-title">Make Rules. / Break Rules.</p>
+                <p class="text">All For One.</p>
+            </div>
+            <div class="buttons">
+                <a href="https://432600.xyz/">个人网站</a>
+                <a href="https://space.bilibili.com/51110915">哔哩哔哩</a>
+                <a href="https://github.com/xgnw">GitHub</a>
+                <a href="https://gitee.com/xgnw">Gitee</a>
+                <a href="https://blog.csdn.net/qq_29023593">CSDN</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // 属性
+    let progressBackground = document.getElementById('progress-bar-background');
+    let progressBar = document.getElementById('progress-bar');
+    let loadingText = document.getElementById('loading-number');
+    let simulatedProgress = 0; // 用于模拟进度
+
+    // 改变进度条函数
+    const increaseProgress = (size) => {
+        if (simulatedProgress < size) {
+            simulatedProgress += Math.random() * 5; // 每次增加一个随机值，确保平滑增长
+            simulatedProgress = simulatedProgress > 100 ? 100 : simulatedProgress;
+            progressBar.style.width = simulatedProgress + '%';
+            loadingText.innerText = Math.round(simulatedProgress) + '%';
+        }
+    }
+
+    let show = true
+    if (show) {
+        // 添加事件
+        document.addEventListener('readystatechange', function () {
+            let avatar = document.querySelector('.avatar');
+            let textBox = document.querySelector('.text-box');
+            let links = document.querySelectorAll('a');
+
+            let interval;
+
+            if (document.readyState === 'interactive') {
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    increaseProgress(90)
+                }, 100);
+            }
+
+            let all = setInterval(() => {
+                if (document.readyState === 'complete' && simulatedProgress > 90) {
+                    clearInterval(interval);
+
+                    increaseProgress(100)
+
+                    let changeHide = setTimeout(() => {
+                        progressBackground.classList.add('hide');
+                        clearTimeout(changeHide);
+
+                        let changeNone = setTimeout(() => {
+                            progressBackground.style.display = 'none';
+
+                            avatar.classList.add('show');
+                            textBox.classList.add('show');
+
+                            for (let i = 0; i < links.length; i++) {
+                                let changeButton = setTimeout(() => {
+                                    links[i].classList.add('show');
+                                }, 200 * i);
+                            }
+                            clearTimeout(changeNone);
+                            clearInterval(all);
+                        }, 500);
+
+                    }, 1000);
+                }
+            })
+        });
+    }
+
+</script>
+
+</html>

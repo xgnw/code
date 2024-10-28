@@ -1,0 +1,333 @@
+@charset "UTF-8";
+@-webkit-keyframes user-img {
+  0% {
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(103, 153, 254);
+            box-shadow: 0px 0px 0px 0px rgb(103, 153, 254);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 100px 10px rgb(103, 153, 254);
+            box-shadow: 0px 0px 100px 10px rgb(103, 153, 254);
+  }
+  100% {
+    box-shasdow: 0px 0px 0px 0px rgb(103, 153, 254);
+  }
+}
+@keyframes user-img {
+  0% {
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(103, 153, 254);
+            box-shadow: 0px 0px 0px 0px rgb(103, 153, 254);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 100px 10px rgb(103, 153, 254);
+            box-shadow: 0px 0px 100px 10px rgb(103, 153, 254);
+  }
+  100% {
+    box-shasdow: 0px 0px 0px 0px rgb(103, 153, 254);
+  }
+}
+@-webkit-keyframes user-img-in {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes user-img-in {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes text-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes text-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes button-in {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes button-in {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@media (min-width: 100px) and (max-width: 767px) {
+  /* 在此添加针对手机屏幕的样式 */
+  html {
+    font-size: 12px !important;
+  }
+  #progress-bar-container {
+    width: 80% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* 在此添加针对平板屏幕的样式 */
+  html {
+    font-size: 14px !important;
+  }
+  #progress-bar-container {
+    width: 80% !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1920px) {
+  /* 在此添加针对电脑屏幕的样式 */
+  html {
+    font-size: 16px !important;
+  }
+}
+@font-face {
+  font-family: "OPPOSans-L";
+  font-weight: 1 999;
+  src: url("../fonts/OPPOSans-L.ttf");
+}
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "OPPOSans-L";
+  font-size: 16px;
+  font-weight: 100;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 100;
+  letter-spacing: 0;
+}
+
+#progress-bar-background {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  font-family: "微软雅黑";
+}
+#progress-bar-background.hide {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+#progress-bar-background #progress-bar-container {
+  width: 50%;
+  height: 1px;
+  background-color: #e1e1e1;
+  /* 保证进度条在所有内容之上 */
+  z-index: 10000;
+}
+#progress-bar-background #progress-bar-container #progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #545454;
+  /* 过渡效果 */
+  -webkit-transition: width 0.1s ease;
+  transition: width 0.1s ease;
+  margin-bottom: 10px;
+}
+#progress-bar-background #progress-bar-container .progress-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#progress-bar-background #progress-bar-container .progress-text .loading-text {
+  margin-left: 0.5rem;
+}
+#progress-bar-background #progress-bar-container .progress-text .loading-title {
+  letter-spacing: 0.5rem;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  color: white;
+  background-image: url("https://img.picgo.net/2024/07/30/background30dc3960844c93bf.jpg");
+  background-size: auto auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main .contain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+.main .avatar {
+  width: 16rem;
+  height: 16rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+.main .avatar img {
+  width: 100%;
+  height: 100%;
+  border: 0.25rem solid rgb(103, 153, 254);
+  border-radius: 50%;
+  -webkit-animation: user-img 5s;
+          animation: user-img 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.main .avatar.show {
+  opacity: 1;
+  -webkit-animation: user-img-in 1s ease-in-out;
+          animation: user-img-in 1s ease-in-out;
+}
+.main .text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+}
+.main .text-box .title,
+.main .text-box .sub-title,
+.main .text-box .text {
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.main .text-box .title {
+  font-size: 2rem;
+}
+.main .text-box.show {
+  opacity: 1;
+  -webkit-animation: text-in 1s ease-in-out;
+          animation: text-in 1s ease-in-out;
+}
+.main .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.main .buttons a {
+  position: relative;
+  color: white;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: 0.25rem;
+  border: 2px solid white;
+  padding: 0.5rem 4rem;
+  margin: 1rem;
+  outline-style: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  background-image: linear-gradient(135deg, rgb(91, 212, 206) 0%, rgb(91, 212, 206) 50%, rgb(255, 128, 171) 50%, rgb(255, 128, 171) 100%);
+  -webkit-clip-path: polygon(2rem 0%, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+          clip-path: polygon(2rem 0%, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+  cursor: pointer;
+}
+.main .buttons a:hover {
+  opacity: 0.8;
+}
+.main .buttons .show {
+  opacity: 1;
+  -webkit-animation: button-in 1s ease-in-out;
+          animation: button-in 1s ease-in-out;
+}/*# sourceMappingURL=index.css.map */

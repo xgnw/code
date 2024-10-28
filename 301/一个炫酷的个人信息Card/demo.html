@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // 屏蔽默认右键菜单
+            $('html').bind('contextmenu', function (e) { return false; })
+            // 自定义右键菜单
+            $('html').mousedown(function (e) {
+                if (e.which == 3) {
+                    // 获取鼠标点击位置
+                    let x = e.pageX,
+                        y = e.pageY;
+                    // 如果点击过于靠边，需要进行处理
+                    let eleWidth = $('#right-menu-box').outerWidth(),
+                        eleHeight = $('#right-menu-box').outerHeight();
+
+                    // 太靠右
+                    if ($(this).width() - x <= eleWidth) x -= eleWidth;
+                    // 太靠下
+                    if ($(this).height() - y <= eleHeight) y -= eleHeight;
+                    // 在这个位置显示菜单
+                    $('#right-menu-box').css({
+                        'display': 'block',
+                        'left': x,
+                        'top': y,
+                    }).animate({
+                        "opacity": 1
+                    }, 200)
+                } else { // 如果点击事件发生在盒子以外的地方
+                    if (e.target == this) {
+                        $('#right-menu-box').animate({
+                            "opacity": 0
+                        }, 100, function () {
+                            $(this).css({
+                                'display': 'none'
+                            })
+                        })
+                    }
+                }
+            })
+
+            //键盘按动事件
+            $('html').on('keydown', function () {
+                $('#right-menu-box').animate({
+                    "opacity": 0
+                }, 100, function () {
+                    $(this).css({
+                        'display': 'none'
+                    })
+                })
+            })
+        })
+    </script>
+    <style>
+        body {
+            width: 100%;
+            height: 500px;
+            background-color: aquamarine;
+        }
+
+        #right-menu-box {
+            display: none;
+            max-width: 150px;
+            text-align: center;
+            background-color: aliceblue;
+            padding: 5px;
+            position: fixed;
+            transition: all .5s;
+            opacity: 0;
+        }
+
+        #right-menu-box>ul {
+            padding: 0;
+        }
+
+        #right-menu-box>ul>li {
+            list-style: none;
+            color: #666;
+            height: 30px;
+            line-height: 30px;
+            padding: 5px 0;
+        }
+
+        #right-menu-box a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #right-menu-box>ul>li:first-child {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #right-menu-box>ul>li:first-child>a {
+            width: 32px;
+            line-height: 32px;
+            border-radius: 50%;
+            transition: all .5s;
+        }
+
+        #right-menu-box>ul>li:first-child>a:hover {
+            background-color: aqua;
+        }
+
+        #right-menu-box>ul>li:not(:first-child) {
+            transition: all .5s;
+        }
+
+        #right-menu-box>ul>li:not(:first-child):hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="right-menu-box">
+        <ul>
+            <li>
+                <a onclick="history.back()"><i>⬅</i></a>
+                <a onclick="history.forward()"><i>➡</i></a>
+                <a onclick="window.location.reload()"><i>⚪</i></a>
+                <a href="https://blog.manyacan.com"><i>🏠</i></a>
+            </li>
+            <hr>
+            <li><a href="">小伙伴们</a></li>
+            <li><a href="">文章归档</a></li>
+            <li><a href="">站内留言</a></li>
+            <li><a href="">关于本站</a></li>
+            <hr>
+            <li><a href="">明暗切换</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

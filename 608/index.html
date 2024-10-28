@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>Html+Css的基础常识(笔记)</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand logo"  style="padding:0"><img src="images/logo.png" alt="Html+Css的基础常识(笔记)" width="150px" height="50px"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right" style="margin-top:0">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">javascript</a></li>
+                <li onclick="alert('这位亲，这个我还没开始学呢！')"><a href="#">Vue.js</a></li>
+                <li onclick="alert('紧张准备中……')"><a href="#">Html-5</a></li>
+                <li onclick="alert('紧张准备中……')"><a href="#">Css-3</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div><div class="width60px"></div>
+<div class="container">
+<div id="top">
+    <h3>Html+Css的基础常识(笔记)</h3>
+</div>
+<div class="row content-style">
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c " >
+        <div>
+        <h4>引入样式的方法</h4>
+        <dl>
+            <dt><h5>1.行间样式的引入</h5></dt>
+            <dd><p>写法：在标签中，写一个style的属性比如:style="....."在引号当中，写相应的css样式</p></dd>
+            <dd><p>缺点：不利于维护，不利于代码重用</p></dd>
+            <dd><p>优点：优先级最高</p></dd>
+        </dl>
+        <dl>
+            <dt><h5>2.内部样式表的引入</h5></dt>
+            <dd><p>写法：在head标签里，写一个style的标签，在标签中，通过选择器来控制样式</p></dd>
+            <dd><p>选择器：标签名选择器</p></dd>
+            <dd><p>写法：div{...css的样式}</p></dd>
+        </dl>
+        <dl>
+            <dt><h5>3.外部样式表的引入</h5></dt>
+            <dd><p>写法：在head标签里，写一个link标签，用来关联一个css的文件，在css文件中，通过选择器来控  制样式</p></dd>
+            <dd><p><linkrel="stylesheet"href="css文件的路径"></p></dd>
+            <dd><p>优点：利于代码重用</p></dd>
+            <dd><p>缺点：需要加载服务器</p></dd>
+        </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>关于选择器</h4>
+            <dl>
+                <dt><h5>1.ID选择器</h5></dt>
+                <dd><p>写法：首先在相应标签中设置一个ID的属性，如：id="id名"</p></dd>
+                <dd><p>在样式表中，通过#+id名{...css的样式}</p></dd>
+                <dd><p>温馨小提示：</p></dd>
+                <dd><p>id名要以英文字母开头</p></dd>
+                <dd><p>id名不能重复，是唯一的</p></dd>
+            </dl>
+            <dl>
+                <dt><h5>2.class选择器</h5></dt>
+                <dd><p>写法：首先在相应标签中设置一个class的属性，如：class="class名"在样式表中，通过.+class名{……css的样式……}</p></dd>
+                <dd><p>温馨小提示</p></dd>
+                <dd><p>class名以英文字母开头</p></dd>
+            </dl>
+             <dl>
+                <dt><h5>3.优先级</h5></dt>
+                <dd><p>标签名选择器<class选择器<id选择器<行间样式</p></dd>
+                <dd><p>优点：加载速度快，不需要去请求服务器</p></dd>
+                <dd><p>缺点：不利于代码重用</p></dd>
+             </dl>
+        </div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>边框的属性</h4>
+            <dl>
+                <dt><h5>border---边框</h5></dt>
+                <dd><p>border-width 边框宽度</p></dd>
+                <dd><p>border-style 边框样式</p></dd>
+                <dd><p>&nbsp;&nbsp;&nbsp;&nbsp;solid 实线</p></dd>
+                <dd><p>&nbsp;&nbsp;&nbsp;&nbsp;dashed 虚线</p></dd>
+                <dd><p>&nbsp;&nbsp;&nbsp;&nbsp;dotted 点线 （点线IE6不认）</p></dd>
+                <dd><p>复合写法</p></dd>
+                <dd><p>border: border-width border-style border-color;</p></dd>
+                <dd><p>border-color 边框颜色 英文单词 十六进制 rgb</p></dd>
+                <dd><p>注意：边框样式书写顺序可以颠倒，不过要便于理解</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>Padding和margin</h4>
+            <dl>
+                <dt><h5>1.padding</h5></dt>
+                <dd><p>padding的含义就是： 内边距 内填充</p></dd>
+            </dl>
+            <dl>
+                <dt><h6>one.下面为各个属性所代表的含义：</h6></dt>
+                <dd><p>padding-top 上内边距</p></dd>
+                <dd><p>padding-right 右内边距</p></dd>
+                <dd><p>padding-bottom 下内边距</p></dd>
+                <dd><p>padding-left 左内边距</p></dd>
+            </dl>
+            <dl>
+                <dt><h6>two.padding的复合写法</h6></dt>
+                <dd><p>padding:10px; 一个值代表  上右下左都是10px</p></dd>
+                <dd><p>padding:10px 20px; 两个值 第一个值代表上下 第二个值代表左右 </p></dd>
+                <dd><p>padding:10px 20px 40px; 三个值 第一个值代表上 第二个值代表左右 第三个值代表下</p></dd>
+                <dd><p>padding:10px 20px 40px 80px; 4个值 第一个值代表上 第二个值代表右 第三个值代表下 第四个值代表左</p></dd>
+            </dl>
+            <dl>
+                <dt><h5>1.Margin</h5></dt>
+                <dd><p>margin: 外边距，盒子以外的距离</p></dd>
+            </dl>
+            <dl>
+                <dt><h6>one.下面为各个属性所代表的含义：</h6></dt>
+                <dd><p>margin-top 上外边距</p></dd>
+                <dd><p>margin-right 右外边距</p></dd>
+                <dd><p>margin-bottom 下外边距</p></dd>
+                <dd><p>margin-left  左外边距</p></dd>
+            </dl>
+            <dl>
+                <dt><h6>two.margin的复合写法</h6></dt>
+                <dd><p>margin:10px; 一个值代表  上右下左都是10px</p></dd>
+                <dd><p>margin:10px 20px; 两个值 第一个值代表上下 第二个值代表左右 </p></dd>
+                <dd><p>margin:10px 20px 40px; 三个值 第一个值代表上 第二个值代表左右 第三个值代表下</p></dd>
+                <dd><p>margin:10px 20px 40px 80px; 4个值 第一个值代表上 第二个值代表右 第三个值代表下 第四个值代表左</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>margin的小脾气</h4>
+            <p>标签的嵌套 确定父子级关系</p>
+            <dl>
+                <dt><h5>1. 第一个子级的margin-top会在特定的情况下穿透父级</h5></dt>
+                <dd><p>规避方法：</p></dd>
+                <dd><p>1.给父级加边框</p></dd>
+                <dd><p>2.给父级加overflow:hidden;</p></dd>
+                <dd><p>3.不要用margin-top，父级的padding-top代替</p></dd>
+                <dt><h5>2. 兄弟关系的margin-top和margin-bottom 会叠压</h5></dt>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>盒模型</h4>
+                <p>盒模型空间大小 ：</p>
+            <dl>
+                <dt><h5>盒子的总高度 ：</h5></dt>
+                    <dd><p>border-top + padding-top + height + padding-bottom + border-bottom</p></dd>
+                <dt><h5>盒子的总宽度 ：</h5></dt>
+                    <dd><p>border-left + padding-left + width + padding-right + border-right</p></dd>
+                <dt><h5>如图示:</h5></dt>
+            </dl>
+           <p class="textIndent0"><img src="images/box.png" alt="" style="width:100%;height:60%" id="box-img"> </p>
+        </div>
+    </div>
+     <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>一大波儿CSS样式来袭！</h4>
+            <dl>
+            <dt><h5>1.常见样式 —文本设置</h5></dt>
+                <dd><p>font-size 文字大小（一般均为偶数）</p></dd>
+                <dd><p>font-family 中文 SimSun (宋体) SimHei (黑体) Microsoft YaHei (微软雅黑) STKaiti (华文楷体) 英文 Arial Georgia Helvetica sans-</p></dd>
+                <dd><p>color   文字颜色（英文、rgb、十六位进制色彩值）</p></dd>
+                <dd><p>line-height       行高 (具体的数值)</p></dd>
+                <dd><p>text-align     文本对齐方式 （left center right）</p></dd>
+                <dd><p>text-indent   首行缩进（em缩进字符或者是具体的数值）</p></dd>
+                <dd><p>font-weight 文字着重 （normal bold bolder 100~900）</p></dd>
+                <dd><p>font-style   文字倾斜  (normal italic oblique)</p></dd>
+                <dd><p>text-decoration        文本修饰 (none underline overline line-through)</p></dd>
+                <dd><p>letter-spacing    字母间距 (具体的数值)  </p></dd>
+                <dd><p>word-spacing     单词间距（以空格为解析单位）</p></dd>
+            </dl>
+        </div>
+     </div>
+     <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+            <div>
+                <h4>常见复合属性</h4>
+                <dl>
+                    <dt><h5>background:</h5></dt>
+                    <dd><p>background-color background-image background-position background-repeat</p></dd>
+                    <dt><h5>font：:</h5></dt>
+                    <dd><p>font-style | font-weight | font-size/line-height | font-family；</p></dd>
+                    <dd><p>font:normal 19px/36px "Microsoft yahei";</p></dd>
+                </dl>
+            </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>常见标签-块属性的标签 </h4>
+            <dl>
+                <dt><h5>1.title标签</h5></dt>
+                    <dd><p>写法:＜title＞＜/title＞</p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：网页标题</p></dd>
+                    <dd><p>权重最大</p></dd>
+                <dt><h5>2.div标签</h5></dt>
+                    <dd><p>写法:＜div＞＜/div＞</p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：无意义</p></dd>
+                    <dd><p>默认样式：无</p></dd>
+                <dt><h5>3.h标签</h5></dt>
+                    <dd><p>h1~h6</p></dd>
+                    <dd><p>写法：＜h1＞＜/h1＞＜h2＞＜/h2＞＜h3＞＜/h3＞＜h4＞＜/h4＞＜h5＞＜/h5＞＜h6＞＜/h6＞</p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：无意义</p></dd>
+                    <dd><p>默认样式：无</p></dd>
+                <dt><h5>4.p标签</h5></dt>
+                    <dd><p>写法：＜p＞＜/p＞</p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：段落</p></dd>
+                    <dd><p>默认样式：margin</p></dd>
+                    <dd><p>p标签在嵌套时不要包含块元素的标签</p></dd>
+                    <dd><p>注意：权重 ：h1 最大 h2 次之 h3更次之 。 h1页面中最好不要超过一个,h2页面中最好不要超过12个,h3之后的h标签就随便了</p></dd>
+                <dt><h5>6.li标签</h5></dt>
+                    <dd><p>写法：＜p＞＜/p＞</p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：列表项</p></dd>
+                    <dd><p>默认样式：list-style-type</p></dd>
+                <dt><h5>7.ol标签</h5></dt>
+                    <dd><p>写法：＜p＞＜/p＞</p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：有序列表</p></dd>
+                    <dd><p>默认样式：margin padding-left list-style-type</p></dd>
+                    <dt><h5>8.dl标签：自定义列表 字典标签</h5></dt>
+                    <dd><p>dl dt dd</p></dd>
+                    <dd><p>写法：<dl></dl></p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：自定义列表</p></dd>
+                    <dd><p>默认样式：margin</p></dd>
+
+                <dt><h5>9.dt</h5></dt>
+                    <dd><p>写法：<dt></dt></p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：列表标题</p></dd>
+                    <dd><p>默认样式：无</p></dd>
+
+                <dt><h5>10.dd</h5></dt>
+                    <dd><p>写法：<dd></dd></p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：列表说明</p></dd>
+                    <dd><p>默认样式：margin-left</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>improtent!他们的特征</h4>
+            <dl>
+                <dt><h5>块标签的特征：</h5></dt>
+                    <dd><p>1.默认是父级100%的宽</p></dd>
+                    <dd><p>2.支持所有CSS样式</p></dd>
+                    <dd><p>3.独占一行</p></dd>
+                <dt><h5>内联标签的特征：</h5></dt>
+                    <dd><p>1.同属性的标签排在同一排</p></dd>
+                    <dd><p>2.内容撑开宽度</p></dd>
+                    <dd><p>3.不支持宽高，不支持上下的padding和margin</p></dd>
+                    <dd><p>4.代码换行被解析 间距大小取决于父级的font-size的大小</p></dd>
+                <dt><h5>内联块标签</h5></dt>
+                    <dd><p>内联块属性 特性：</p></dd>
+                    <dd><p>1.同属性的标签排在同一排</p></dd>
+                    <dd><p>2.内容撑开宽度</p></dd>
+                    <dd><p>3.支持所有的css的样式</p></dd>
+                    <dd><p>4.代码换行被解析，间距大小取决于父级的font-size大小</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>常用的标签</h4>
+            <dl>
+                <dt><h5>a标签（内联标签）</h5></dt>
+                    <dd><p>写法：<a href="需要链接的网页地址" target="打开网页的方式"></a></p></dd>
+                    <dd><p>双标签</p></dd>
+                    <dd><p>语义：超链接</p></dd>
+                    <dd><p>默认样式：color text-decoration cursor</p></dd>
+                    <dd><p><strong>温馨提示：</strong></p></dd>
+                    <dd><p class="textIndent0">href属性中</p></dd>
+                    <dd><p>1.如果要链接一个网站地址的话，一定要加 http://</p></dd>
+                    <dd><p>2. # 代表链接到当前页</p></dd>
+                    <dd><p>target</p></dd>
+                    <dd><p>_self 默认 在当前窗口打开</p></dd>
+                    <dd><p>_blank 在新窗口打开</p></dd>
+                <dt><h5>img标签（块标签）</h5></dt>
+                    <dd><p>写法：img src="图片的路径地址" alt="图片说明"></p></dd>
+                    <dd><p>单标签</p></dd>
+                    <dd><p>语义：图片</p></dd>
+                    <dd><p>默认样式：低版本浏览器中有默认的边框</p></dd>
+                    <dd><p class="textIndent0">温馨小提示：</p></dd>
+                    <dd><p>1.路径地址一定要正确</p></dd>
+                    <dd><p>2.alt属性一定要写</p></dd>
+                <dt><h5>标签类型的转换</h5></dt>
+                    <dd><p>显示为无：display:none;</p></dd>
+                    <dd><p>块属性 display:block;</p></dd>
+                    <dd><p>内联属性：</p></dd>
+                    <dd><p>内联 display:inline;</p></dd>
+                    <dd><p>内联块 display:inline-block;</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>浮动到底是什么鬼</h4>
+            <p>浮动：  float</p>
+            <dl>
+                <dt><h5>浮动的特性</h5></dt>
+                <dd><p>1.浮动的元素排在同一排</p></dd>
+                <dd><p>2.浮动的元素内容撑开宽度</p></dd>
+                <dd><p>3.浮动的元素支持所有的css样式</p></dd>
+                <dd><p>4.浮动的元素脱离文档流</p></dd>
+                <dd><p>5.浮动的元素提升层级半级</p></dd>
+            <dt><h5>BFC（清浮动的意思）</h5></dt>
+                <dt><h5>1.overflow：溢出 会重新计算元素的空间</h5></dt>
+                    <dd><p>hidden 溢出隐藏</p></dd>
+                    <dd><p>auto   溢出出现滚动条</p></dd>
+                    <dd><p>scroll 出现滚动条的位置</p></dd>
+                <dt><h6>元素的居中</h6></dt>
+                    <dd><p>margin:0 auto;</p></dd>
+                <dt><h5>3.元素的伪类</h5></dt>
+                    <dd><p>伪类：就是CSS一些元素身上的特殊属性</p></dd>
+                    <dd><p>:hover 鼠标停留</p></dd>
+                    <dd><p>:after 在元素内容之后插入一些内容</p></dd>
+                <dt><h5>4.什么叫浮动：</h5></dt>
+                    <dd><p>其实就是使元素脱离文档流，按照一定的方式排列，遇到相邻的浮动元素或者父级的边界停下来。</p></dd>
+                <dt>四.BFC的好处与坏处</dt>
+                    <dd><p>BFC 就是清浮动 是用来处理浮动元素脱离文档流的问题</p></dd>
+                <dt><h5>1.父级也浮动</h5></dt>
+                    <dd><p>弊端：左右的margin:0 auto; 会失效；</p></dd>
+                    <dd><p>2.父级加display:inline-block</p></dd>
+                    <dd><p>弊端：左右的margin:0 auto; 会失效；</p></dd>
+                    <dd><p>(如果需要让元素居中可以给父级加text-align:center)</p></dd>
+                <dt><h5>3.给父级加高</h5></dt>
+                    <dd><p>弊端：扩展性不好</p></dd>
+                <dt><h5>4.br标签</h5></dt>
+                    <dd> <p>写法：<br/></p></dd>
+                    <dd><p>作用：换行</p></dd>
+                <dt><h5>5.clear</h5></dt>
+                    <dd><p>clear 元素的某一方向不允许出现其他的浮动元素</p></dd>
+                    <dd><p>left   right      both  推荐使用one</p></dd>
+                    <dd><p class="textIndent0">温馨小提示</p></dd>
+                    <dd><p>不符合W3C规范 违反结构 样式 行为 三者分离原则</p></dd>
+                <dt><h5>6.伪类清浮动</h5></dt>
+                    <dd><p>:after{content:"";display:block;
+                            clear:both;}</p></dd>
+                    <dd><p class="textIndent0">温馨提示：目前主流方法。建议使用</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+        <h4>定位的属性及特性</h4>
+            <dl>
+                <dd><p>定位： 把一个元素 按照一定的方式 定到页面的某一个位置</p></dd>
+                <dd><p>定位：    position</p></dd>
+                <dt><h5>1.相对定位：relative </h5></dt>
+                <dd><p>针对自己本身的位置进行定位</p></dd>
+                <dt><h5>2.绝对定位：absolute</h5></dt>
+                <dd><p>针对有定位的父级的原点进行定位，如果父级没有定位，会找父级的父级身上有没有定位，如果有，针对父级的父级的原点进行定位，以此类推，如果都没有定位，针对document进行定位</p></dd>
+                <dd><p class="textIndent0">温馨小提示：</p></dd>
+                <dd><p>绝对定位即使没有初始值，也一定要设置值  例子：left:0px;    top:0px;</p></dd>
+                <dt><h5>3.固定定位：fixed</h5></dt>
+                <dd><p>针对页面窗口进行定位</p></dd>
+                <dd><p class="textIndent0">温馨提示</p></dd>
+                <dd><p>IE6 不支持固定定位</p></dd>
+                <dd><p>偏移量：     Left    top right   bottom</p></dd>
+                <dd><p>温馨提示：        left top 比 right bottom 的优先级要高</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>三种的定位的特性</h4>
+            <dl>
+                <dt><h5>1.相对定位 relative</h5></dt>
+                    <dd><p>1.不影响元素本身的特性</p></dd>
+                    <dd><p>2.不使元素脱离文档流 </p></dd>
+                    <dd><p>3.提升层级</p></dd>
+                    <dd><p>4.无法触发BFC</p></dd>
+                    <dd><p>5.针对自己本身进行定位</p></dd>
+                <dt><h5>2.绝对定位 absolute</h5></dt>
+                    <dd><p>1.会使元素完全脱离文档流</p></dd>
+                    <dd><p>2.内容撑开宽度和高度</p></dd>
+                    <dd><p>3.使元素支持所有的CSS样式</p></dd>
+                    <dd><p>4.提升层级</p></dd>
+                    <dd><p>5.绝对定位要和相对定位配合使用</p></dd>
+                    <dd><p>6.如果有定位父级，针对定位父级发生偏移，没有定位父级，针对document进行偏移</p></dd>
+                    <dd><p>7.如果绝对定位的子级有浮动，可以省略清浮动的操作</p></dd>
+                <dt><h5>3.固定定位 fixed</h5></dt>
+                    <dd><p>1.不兼容IE6</p></dd>
+                    <dd><p>2.针对窗口进行定位</p></dd>
+                    <dd><p>3.如果固定定位的子级有浮动，可以省略清浮动的操作</p></dd>
+                <dt><h5>层级定位：z-index</h5> </dt>
+                  <dd><p>1.只有定位的盒子才有层级</p></dd>
+                    <dd><p>2.数值越大，层级越高</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c visible-xs-block visible-sm-block visible-lg-block">
+        <div>
+        <h4>派生选择器</h4>
+            <dl>
+                    <dd><p>是由 id选择器 class选择器 标签名选择器组合而成</p></dd>
+                    <dd><p>id选择器    10000</p></dd>
+                    <dd><p>class选择器 100</p></dd>
+                    <dd><p>标签名选择器 1</p></dd>
+                    <dd><p>层级高就会压制层级低的</p></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 bg-c">
+        <div>
+            <h4>兼容性</h4>
+            <dl>
+                <dt><h5>1.兼容性到底是什么玩意</h5></dt>
+                    <dd><p>兼容性：页面在不同的浏览器中可能会显示不同。</p></dd>
+                    <dd><p>在IE6下，子级的宽度会撑开父级设置好的宽度</p></dd>
+                    <dt><p class="textIndent0">温馨小提示：盒模型的计算一定要精确</p></dt>
+                    <dd><p>否则IE浏览器可能会显示不同</p></dd>
+                <dt><h5>2.兼容性2</h5></dt>
+                    <dd><p>ie6中，元素浮动，如果宽度需要内容撑开，需要给里面的块元素都添加浮动才可以</p></dd>
+                <dt><h5> 3.兼容性3</h5></dt>
+                    <dd><p>在IE6.7下 元素要通过浮动排在同一排，就需要给这行元素都加浮动</p></dd>
+                <dt><h5>4.兼容性4</h5></dt>
+                    <dd><p>注意标签的嵌套规则</p></dd>
+                <dt><h5> 5.兼容性5</h5></dt>
+                    <dd><p>在IE6下元素的高度如果小于19px的时候，会被当成19px来处理</p></dd>
+                    <dd><p>解决方法：overflow:hidden;</p></dd>
+                <dt><h5> 6.兼容性6</h5></dt>
+                    <dd><p>在IE6下不支持1px的dotted边框样式</p></dd>
+                    <dd><p>解决方法：切背景平铺</p></dd>
+                <dt><h5> 7.兼容性7</h5></dt>
+                    <dd><p>haslayout</p></dd>
+                    <dd><p>在IE下大部分兼容性都是因为haslayout属性的触发问题，尽量触发haslayout属性，可以减少很多IE下的兼容下的问题。</p></dd>
+                    <dd><p>在IE下父级有边框的时候，子元素的margin会失效</p></dd>
+                    <dd><p>解决方法：触发父级的haslayout属性</p></dd>
+                <dt><h5> 8.兼容性8</h5></dt>
+                    <dd><p>ie6下双边距的bug</p></dd>
+                    <dd><p>在ie6下，块元素有浮动有横向的margin的值的时候，横向的margin的值会扩大两倍</p></dd>
+                <dt><h5>9.兼容性9</h5></dt>
+                    <dd><p>margin-left 一行中左侧的第一个元素有双边距</p></dd>
+                    <dd><p>margin-right 一行中右侧的第一个元素有双边距</p></dd>
+                <dt><h5>10.兼容性10</h5></dt>
+                    <dd><p>在IE6,7下，li本身没有浮动，li里面的内容有浮动，li下会产生一个间隙</p></dd>
+                    <dd><p class="textIndent0">解决方法：</p></dd>
+                    <dd><p>1.给li加浮动</p></dd>
+                    <dd><p>2.给li加vertical-align:top</p></dd>
+                <dt><h5> 11.兼容性11</h5></dt>
+                    <dd><p>在IE6,7下，li本身没有浮动，li里面的内容有浮动，li下会产生一个间隙</p></dd>
+                    <dd><p>解决方法：</p></dd>
+                    <dd><p>1.给li加浮动</p></dd>
+                    <dd><p>2.给li加vertical-align:top</p></dd>
+                    <dd><p>在IE6下最小高度的bug 和 li的间隙问题共存的时候，给li加浮动 ，vertical-align不好使</p></dd>
+                <dt><h5> 12.兼容性12</h5></dt>
+                    <dd><p>当一行子级元素宽度之和和父级的宽度相差超过3px，或者子级元素不满行的情况的时候，最后一行的子级元素的margin-bottom会失效</p></dd>
+                <dt><h5>13.兼容性13</h5></dt>
+                    <dd><p>在ie6下的文字溢出bug</p></dd>
+                    <dd><p>子元素的宽度和父级的宽度如果相差小于3px的时候，</p></dd>
+                    <dd><p>两个浮动元素中间有注释或者内联元素，就会出现文字溢出，内联元素越多，溢出越多</p></dd>
+                    <dd><p>解决办法：</p></dd>
+                    <dd><p>用div把注释或者内联元素包起来</p></dd>
+                <dt><h5> 14.兼容性14</h5></dt>
+                    <dd><p>在IE6下，当浮动元素和绝对定位元素是兄弟关系的时候，绝对定位会失效</p></dd>
+                    <dd><p>解决方法：</p></dd>
+                    <dd><p>不让浮动元素和绝对定位元素是兄弟关系，用div或者其他标签把a标签包起来</p></dd>
+                <dt><h5> 15.兼容性15</h5></dt>
+                    <dd><p>在IE6.7下，子级元素有相对定位，父级overflow包不住子级元素</p></dd>
+                    <dd><p>解决方法：</p></dd>
+                    <dd><p>给父级也加相对定位</p></dd>
+                <dt><h5> 16.兼容性16</h5></dt>
+                    <dd><p>在IE6下，如果绝对定位的父级宽高是奇数的时候，子级元素的right和bottom值会有1px的偏差</p></dd>
+                <dt><h5> 17.兼容性17</h5></dt>
+                    <dd><p>在IE6.7下 输入型的表单标签控件上下会有1px的间隙。</p></dd>
+                    <dd><p>解决方法</p></dd>
+                    <dd><p>给input加浮动</p></dd>
+                <dt><h5> 18.兼容性18</h5></dt>
+                    <dd><p>css hack:</p></dd>
+                    <dd><p>ie9 ie10之前的ie浏览器解析的代码</p></dd>
+                    <dd><p>+或者* 表示ie7包括7之前的ie浏览器</p></dd>
+                    <dd>_表示 ie6包括6之前的ie浏览器<p></p></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="footer">
+    <p>联系我们 | 网站地图 | 法律声明 | 友情链接 | 盗版举报 | 人才招聘</p>
+    <p>版权所有(C)2014 清华大学出版社有限公司 京ICP备05029640号 京公网安备11010802013248号</p>
+</div>
+
+<div id="left-fixed">
+    <input type="submit" id="switchGo" value="关灯">
+    <label for="inputs">改变背景色：</label>
+    <input type="color" class="form-control" id="inputs">
+    <br />
+    <button type="" class="form-control" id="buttons">确定</button>
+    <div>
+            <label for="linear-deg">改变小盒子的渐变角度</label>
+            <input type="number" class="form-control" id="linear-deg" max="360" placeholder="输入的数值大于360无效"  >
+            <label for="linear-bgc">改变小盒子的渐变颜色（1）</label>
+            <input type="color" class="form-control" id="linear-bgc">
+            <label for="linear-bgc1">改变小盒子的渐变颜色（2）</label>
+            <input type="color" class="form-control" id="linear-bgc1">
+            <br />
+            <button type="" class="form-control" id="btn-linear-bgc">确定</button>
+            <br>
+            <input type="submit"  class="form-control" name="" value="点击清空" onclick="window.location.href=''">
+    </div>
+</div>
+</div>
+<div class="container navbar-fixed-bottom visible-xs-block">
+    <div class="row">
+        <a href="javascript:;"><div class="col-xs-3 bottom-nav"><div>首页</div></div></a>
+        <a href="javascript:;"><div class="col-xs-3 bottom-nav"><div>发现</div></div></a>
+        <a href="javascript:;"><div class="col-xs-3 bottom-nav"><div>分类</div></div></a>
+        <a href="javascript:;"><div class="col-xs-3 bottom-nav"><div>我的</div></div></a>
+    </div>
+</div>
+
+</form>
+</body>
+</html>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+
+
+

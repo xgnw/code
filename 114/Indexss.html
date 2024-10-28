@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+<!--
+    欢迎光临！
+
+    重要提示：
+        网站所使用的粒子效果来自于 https://codepen.io/tutsplus/pen/MrjYJK
+
+        网站所使用的句子信息来自于 https://hitokoto.cn
+
+        网站所使用的热榜来自于 https://github.com/imsyy/DailyHotApi & https://github.com/imsyy/DailyHot
+
+    联系我：
+        我的邮箱 xxiters520@gmail.com
+
+    谢谢您的访问，祝您愉快！
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分享鸭 - 分享优质资源</title>
+
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+
+    <meta content="分享鸭,分享资源,优质资源,资源分享,ShareDuck" name="keywords"/>
+    <meta content="一个致力于分享高质量资源的平台，包括但不限于文章、视频、图片、音乐等多种形式。我们的目标是帮助用户发现并分享有价值的资源，让更多人受益。" name="description"/>
+    
+    <link href="css/beautify.css" rel="stylesheet">
+    <link href="css/particle.css" rel="stylesheet">
+
+    <script async src="https://analytics.umami.is/script.js" data-website-id="750f22d6-18c2-4815-9360-ee7054803ffd"></script>
+</head>
+<body>
+<div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+<header>
+    <div class="headerContainer">
+        <div class="sentence">
+            <span id="hitokoto_text" onclick="nextClick()">你要尝试弄明白在你生命中最值得追求的是什么。</span>
+        </div>
+        <div class="nav">
+            <div class="discoverNav">
+                <span>发现</span>
+            </div>
+            <div class="designNav showNav">
+                <span>设计</span>
+            </div>
+            <div class="exploreNav">
+                <span>探索</span>
+            </div>
+        </div>
+        <div class="hot" onclick="hot()">
+            <img src="imgs/hot_favicon.png">
+            <span>热榜</span>
+        </div>
+        <div class="community" onclick="community()">
+            <span>反馈</span>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="discoverContainer">
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>创意</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://neal.fun" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/neal-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Neal</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 创意 / 趣味</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.wikihow.com/" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/wikiHow-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>WikiHow</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 创意 / 指南</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://theuselessweb.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/theUselessWeb-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>TheUselessWeb</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 创意 / 随机</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>游戏</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://poki.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/poki-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Poki</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 游戏 / 在线</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.crazygames.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/crazyGames-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>CrazyGames</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 游戏 / 在线</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>工具</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://excalidraw.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/excalidraw-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Excalidraw</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 工具 / 白板</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.iamwawa.cn" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/iamwawa-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Iamwawa</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 工具 / 在线</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.autodraw.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/autoDraw-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>AutoDraw</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 工具 / 绘制</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>主页</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.wetab.link" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/weTab-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>WeTab</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 主页 / 创意</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://limestart.cn" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/limeStart-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>LimeStart</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 主页 / 极简</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.itab.link" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/iTab-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>ITab</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 主页 / 组件</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://nbtab.cc" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/nbTab-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>NbTab</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 主页 / 定制</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>社区</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.v2ex.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/v2EX-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>V2EX</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 社区 / 交流</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.indiehackers.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/indieHackers-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>IndieHackers</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 社区 / 交流</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>噪音</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://virtocean.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/virtOcean-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>VirtOcean</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 噪音 / 海洋</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://earth.fm" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/earth-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Earth</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 噪音 / 自然</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://rainyscope.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/rainyScope-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>RainyScope</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 噪音 / 四季</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>智能</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.aishort.top/" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/aIShort-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>AIShort</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 智能 / 提示</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://learningprompt.wiki" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/learningPrompt-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>LearningPrompt</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 智能 / 学习</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://learningprompt.wiki" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/discover/promptingGuide-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>PromptingGuide</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>发现 / 智能 / 指南</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="designContainer showContainer">
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>灵感</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://dribbble.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/dribbble-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Dribbble</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 灵感 / 作品</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.deviantart.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/deviantArt-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>DeviantArt</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 灵感 / 画廊</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://huaban.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/huaBan-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>HuaBan</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 灵感 / 素材</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>图库</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://unsplash.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/unsplash-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Unsplash</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://pixabay.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/pixabay-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Pixabay</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.pexels.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/pexels-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Pexels</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://stocksnap.io" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/stockSnap-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>StockSnap</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.vecteezy.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/vecteezy-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Vecteezy</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://negativespace.co" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/negativeSpace-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>NegativeSpace</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://vectorportal.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/vectorPortal-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>VectorPortal</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图库 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>插画</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.humaaans.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/humaaans-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Humaaans</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.opendoodles.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/openDoodles-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>OpenDoodles</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.drawkit.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/drawKit-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>DrawKit</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.getillustrations.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/getIllustrations-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>GetIllustrations</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://iradesign.io" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/iraDesign-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>IraDesign</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.openpeeps.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/openPeeps-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>OpenPeeps</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://storyset.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/storyset-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Storyset</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 插画 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>配色</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://picular.co" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/picular-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Picular</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 配色 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://coolors.co" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/coolors-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Coolors</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 配色 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://colorhunt.co" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/colorHunt-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>ColorHunt</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 配色 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.happyhues.co" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/happyHues-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>HappyHues</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 配色 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>图标</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://tablericons.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/tablerIcons-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>TablerIcons</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://unicornicons.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/unicornIcons-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>UnicornIcons</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://lordicon.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/lordIcon-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>LordIcon</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://iconstore.co" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/iconStore-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>IconStore</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.iconfont.cn" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/iconFont-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>IconFont</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://loading.io" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/loading-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Loading</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.iconshock.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/iconShock-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>IconShock</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://roundicons.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/roundIcons-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>RoundIcons</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 图标 / 免费</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>微标</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://looka.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/looka-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Looka</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 微标 / 构建</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.logoai.com/" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/design/logoAI-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>LogoAI</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>设计 / 微标 / 构建</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="exploreContainer">
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>资讯</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://36kr.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/36Kr-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>36Kr</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 资讯 / 信息</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.huxiu.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/huXiu-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>HuXiu</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 资讯 / 信息</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.leiphone.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/leiPhone-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>LeiPhone</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 资讯 / 信息</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>产品</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.producthunt.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/productHunt-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>ProductHunt</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 产品 / 分享</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.xinquji.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/xinQuJi-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>XinQuJi</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 产品 / 分享</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>周刊</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.decohack.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/decoHack-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>DecoHack</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 周刊 / 发现</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.ezindie.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/ezIndie-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>EzIndie</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 周刊 / 发现</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>辑录</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.meiye.art" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/meiYe-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>MeiYe</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 辑录 / 灵感</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://mobbin.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/mobbin-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Mobbin</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 辑录 / 灵感</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>内容</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://sspai.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/sSPai-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>SSPai</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 内容 / 发现</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.shenmezhidedu.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/shenmeZhidedu-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>ShenmeZhidedu</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 内容 / 书库</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://www.xinpianchang.com" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/xinPianChang-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>XinPianChang</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 内容 / 短片</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>信息</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://smzdk.top" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/smzdk-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Smzdk</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 信息 / 简洁</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="segmentationContainer"></div>
+        <div class="containerBox">
+            <div class="typeBox">
+                <span>链接</span>
+            </div>
+            <div class="cardBox">
+                <a href="https://linktr.ee" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/linktr-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>Linktr</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 链接 / 名片</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardBox">
+                <a href="https://muselink.cc" target="_blank">
+                    <div class="iconBox">
+                        <img alt="图标" src="imgs/explore/museLink-icon.png">
+                    </div>
+                    <div class="infoBox">
+                        <div class="titleBox">
+                            <span>MuseLink</span>
+                        </div>
+                        <div class="describeBox">
+                            <span>探索 / 链接 / 名片</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <!-- 待定 -->
+</footer>
+
+<script src="js/power.js"></script>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "39403a11b32d4387b6c9e128b16ebbfd"}'></script><!-- Cloudflare Pages Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"82b9145afd6915c6","r":1,"version":"2023.10.0","token":"0fcd6dd230194d23b8d897eadb46cfe6"}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8">
+
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection"> <!-- main stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="css/tipsy.css"> <!-- Tipsy implementation -->
+
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="./css/ie8.css" />
+<![endif]-->
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> <!-- uiToTop implementation -->
+<script type="text/javascript" src="js/custom-scripts.js"></script>
+<script type="text/javascript" src="js/jquery.tipsy.js"></script> <!-- Tipsy -->
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+			
+	universalPreloader();
+						   
+});
+
+$(window).load(function(){
+
+	//remove Universal Preloader
+	universalPreloaderRemove();
+	
+	rotate();
+    dogRun();
+	dogTalk();
+	
+	//Tipsy implementation
+	$('.with-tooltip').tipsy({gravity: $.fn.tipsy.autoNS});
+						   
+});
+
+</script>
+
+
+<title>404 - Not found</title>
+</head>
+
+<body>
+
+<!-- Universal preloader -->
+<div id="universal-preloader">
+    <div class="preloader">
+        <img src="./img/tipsy.gif" alt="universal-preloader" class="universal-preloader-preloader">
+    </div>
+</div>
+<!-- Universal preloader -->
+
+<div id="wrapper">
+<!-- 404 graphic -->
+	<div class="graphic"></div>
+<!-- 404 graphic -->
+<!-- Not found text -->
+	<div class="not-found-text">
+    	<h1 class="not-found-text">访问的页面出错
+<a href="/"><font color="#000000">点我返回首页</font></a></h1>
+    </div>
+<!-- Not found text -->
+
+<div class="dog-wrapper">
+<!-- dog running -->
+	<div class="dog"></div>
+<!-- dog running -->
+	
+<!-- dog bubble talking -->
+	<div class="dog-bubble">
+    	
+    </div>
+    
+    <!-- The dog bubble rotates these -->
+    <div class="bubble-options">
+    	<p class="dog-bubble">
+        	你怎么会来到这个页面？旺旺
+        </p>
+    	<p class="dog-bubble">
+	        <br>
+        是跟要跟我一起跑步吗？旺旺
+        </p>
+        <p class="dog-bubble">
+        	<br>
+      不过我觉得你还是先返回首页吧
+        </p>
+        <p class="dog-bubble">
+        	想吃曲奇饼了<br><img style="margin-top:8px" src="./img/cookie.png" alt="cookie">
+        </p>
+        <p class="dog-bubble">
+        	<br>
+       我其实不想跑的
+        </p>
+        <p class="dog-bubble">
+        	<br>
+      你一来到这里 我就要跑
+        </p>
+        <p class="dog-bubble">
+        所以你赶紧回去吧 
+        </p>
+        <p class="dog-bubble">
+        	<br>
+           跑的太累啦 旺旺
+        </p>
+    </div>
+    <!-- The dog bubble rotates these -->
+<!-- dog bubble talking -->
+</div>
+
+<!-- planet at the bottom -->
+	<div class="planet"></div>
+<!-- planet at the bottom -->
+</div>
+
+
+</body></html>

@@ -1,0 +1,56 @@
+.no_data, .business_enter {
+    text-align: center;
+    clear: both;
+    background-color: #fafafa;
+}
+
+.no_dataImg {
+    width: 240px;
+    padding: 170px 0 50px 0;
+}
+
+.no_dataText {
+    text-align: center;
+    padding: 0 0 90px 0;
+    color: #bebebe;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav_bottomLine {
+    border-bottom: 2px solid #ff6600;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: fit-content;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p.footer {
+    font-size: 10px;
+    font-family: 微软雅黑 serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #444444;
+    transition: 0.3s all;
+}
+
+p.footer:hover {
+    color: #aaaaaa;
+    transition: 0.3s all;
+}
+
+@media screen and (max-width: 768px){
+    a.footer1 {
+        display: none;
+    }
+}

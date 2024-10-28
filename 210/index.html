@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>像素云计算 - 四格像素</title>
+    <style>
+        /* 自定义样式 */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  animation: fadeInRight 0.5s forwards;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+        .sidebar {
+    flex: 0 0 300px;
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    animation: slideInLeft 0.5s;
+    box-shadow: 0px 10px 200px rgb(0, 0, 0); /* 添加阴影效果 */
+}
+        .sidebar h3 {
+            margin-top: 0;
+            color: #eee;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .sidebar li {
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            color: #eee;
+            text-decoration: none;
+        }
+        .sidebar a {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar a::before,
+.sidebar a::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(163, 255, 221, 0.297);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: -1;
+}
+
+.sidebar a::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+.sidebar a::after {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.sidebar a.active::before,
+.sidebar a.active::after {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  transform: translateX(5px);
+  outline: none;
+}
+
+.sidebar a:hover::before,
+.sidebar a:focus::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.sidebar a::after {
+  visibility: hidden;
+}
+
+.sidebar a:focus::after,
+.sidebar a.active::after {
+  visibility: visible;
+  transform: scaleX(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    background-image: url("https://bpic.588ku.com/meeting_image/18/08/22/9997cd758ee8956ea7fe4a9658a5cbdd.png"); /* 替换为您的背景图片地址 */
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 0.9s;
+}
+        .tab {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab button {
+            flex: 1;
+            padding: 10px;
+            background: #ddd;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab button:hover {
+            background: #ccc;
+        }
+        .tab button.active {
+            background: #999;
+            color: #fff;
+        }
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.5s;
+        }
+        .product-box {
+            border: 2px solid #000000; /* 添加边框 */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        function changeTab(tabName, event) {
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            } 
+            document.getElementById(tabName).classList.add("active");
+
+            var buttons = document.getElementsByClassName("tab-button");
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove("active");
+            }
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>像素云计算</h3>
+            </br>
+            <ul>
+                <li><a href="javascript:void(0);" class="tab-button active" onclick="changeTab('home', event)">首页　　　　　　　</a></li>
+                <li><a href="javascript:void(0);" class="tab-button" onclick="changeTab('product-list', event)">产品列表　　　　　</a></li>
+                <li><a href="javascript:void(0);" class="tab-button" onclick="changeTab('purchase-channels', event)">购买渠道　　　　　</a></li>
+                <li><a href="javascript:void(0);" class="tab-button" onclick="changeTab('about', event)">关于　　　　　　　</a></li>
+                <li><a href="javascript:void(0);" class="tab-button" onclick="changeTab('back', event)">返回　　　　　　　</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="home" class="tab-content active">
+                <h2>欢迎来到像素云 V0.1.1</h2></br>
+                <div class="product-box">
+                    <h3>关于vps系统</h3>
+                    <p>目前为试运营，系统为Windows Server 2019</p>
+                    <p>此系统占用极低、兼容性也很好，适合各类项目，不建议调整</p>
+       
+                    <p>若您需要调整，请联系客服</p>
+                    
+                </div>
+                <div class="product-box">
+                    <h3>必看！关于期限</h3>
+                    <p>[所有产品均为一月一付]</p>
+                    <p>每月价格详见产品详情</p>
+                    <p>价格可能因为节假日出现变动</p>
+                    <p>若您需要季付或年付，请联系客服，我们会为您打折优惠</p>
+                    
+                </div>
+            </div>
+            <div id="product-list" class="tab-content">
+                <h2>产品列表</h2>
+                <div class="product-box">
+                    <h3>套餐一 - 建议开我的世界服务器使用</h3>
+                    <p>CPU：4核</p>
+                    <p>内存：8GB</p>
+                    <p>价格：33/月</p>
+                    <a href="javascript:void(0);" class="tab-button" onclick="changeTab('purchase-channels', event)">购买</a>
+                </div>
+                <div class="product-box">
+                    <h3>套餐二 - 其他项目可用</h3>
+                    <p>CPU：4核</p>
+                    <p>内存：4GB</p>
+                    <p>价格：25/月</p>
+                    <a href="javascript:void(0);" class="tab-button" onclick="changeTab('purchase-channels', event)">购买</a>
+                </div>
+                <div class="product-box">
+                    <h3>注意事项</h3> 
+                    <p>机器采用至强可拓展金牌高性能处理器,秒杀e5;</br>所有机器带有公网,可开6个端口
+                        带宽50Mbps上下对等
+                        </p>
+                    
+                </div>
+            </div>
+            <div id="purchase-channels" class="tab-content">
+                <h2>购买渠道</h2>
+                <div class="contact-box">
+                    <h3>联系方式</h3>
+                    <p>邮箱：2833486939@qq.com</p>
+                    <p>QQ号：2833486939</p>
+                    <p>购买请联系客服</p>
+                    <p>价格若有活动面议</p>
+                    <p>自动收货正在兼容，感谢支持</p>
+                </div>
+            </div>
+            <div id="about" class="tab-content">
+                <h2>关于</h2>
+                <div class="product-box">
+                    <h3>关于面板</h3>
+                    <p>FPX-GUI V1.0.2</p></br>
+                    <p>FPX_神子 - 技术开发</p>
+                    <p>CHMLFRP - 网络支持</p>
+                    <p></p>
+                    
+                </div>
+                <div class="product-box">
+                    <h3>关于vps</h3>
+                    <p>by Piexl-Clude</p></br>
+                    <p>服务器位置：迁宿</p>
+                    <p>感谢您的使用！</p>
+                    <p></p>
+                    
+                </div>
+            </div>
+            <div id="back" class="tab-content">
+                <h2>返回主页</h2>
+                <div class="product-box">
+                    <h3></h3>
+                    <a href="./index.html">点击返回</a>
+                    <p></p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var tabs = document.getElementsByClassName("tab-content");
+            tabs[0].classList.add("active");
+
+            document.getElementById("product-list").style.opacity = "1";
+        }
+    </script>
+    <script>
+        var sidebarLinks = document.querySelectorAll(".sidebar a");
+      
+        sidebarLinks.forEach(function(link) {
+          link.addEventListener("click", function(event) {
+            event.preventDefault();
+      
+            // 移除之前添加的 .active 类
+            sidebarLinks.forEach(function(item) {
+              item.classList.remove("active");
+            });
+      
+            // 添加 .active 类到当前点击的链接
+            this.classList.add("active");
+          });
+        });
+      </script>
+<script type="text/javascript" src="1.js"></script></body>
+</html>
