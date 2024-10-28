@@ -1,1 +1,0 @@
-function showtb(tbnum){whichEl = eval("tbtype" + tbnum);if (whichEl.style.display == "none"){eval("tbtype" + tbnum + ".style.display=\"\";");}else{eval("tbtype" + tbnum + ".style.display=\"none\";");}}
