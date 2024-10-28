@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML代码收藏</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" />
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #ddd;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@media only screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+  }
+}
+</style>
+<!--footer css-->
+<style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--text-color-hover);
+      color: var(--text-color);
+      font-family: "PingFang SC", "Open Sans", "Microsoft YaHei", sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    footer {
+      line-height: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+    }
+
+    footer .social {
+      color: var(--icon-color);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    footer .social i {
+      margin: 0 12px;
+    }
+
+    footer .point::before {
+      content: "·";
+      color: var(--text-color-gray);
+    }
+  </style>
+<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style-type: none;
+		}
+		html,body{
+			overflow-x: hidden;
+			
+		}
+		#table{
+			width: 100%;
+			margin: 0 auto;
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		#table td{
+			text-align: center;
+			transition: all 0.3s;
+			width: 190px;
+			height: 50px;
+		}
+		#table .blog:hover{
+			animation: bounce 0.5s;
+			background-color: cornflowerblue;
+		}
+		#table .sever:hover{
+			background-color: indianred;
+			animation: rubberBand 0.5s;
+		}
+		#table .jc:hover{
+			background-color: green;
+			animation: bounceIn 0.5s;
+		}
+		#table td:hover a{
+			color: white;
+		}
+		.blog a{
+			color: cadetblue;
+			transition: all 0.3s;
+		}
+		.sever a{
+			color: indianred;
+			transition: all 0.3s;
+		}
+		.jc a{
+			color: green;
+			transition: all 0.3s;
+		}
+		.blog{
+			border: 1px solid cornflowerblue;
+		}
+		.sever{
+			border: 1px solid indianred;
+		}
+		.jc{
+			border: 1px solid green;
+		}
+		#top{
+			width: 100%;
+		}
+		#top img{
+			width: 10%;
+		}
+		#nav{
+			width: 100%;
+			height: 50px;
+			background-color: cadetblue;
+			margin-bottom: 10px;
+		}
+		#nav ul{
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			display: flex;
+			justify-content: space-around;
+			text-align: center;
+		}
+		#nav ul li{
+			width: 130px;
+			height: 100%;
+			display: inline-block;
+			transition: all 0.3s;
+		}
+		#nav ul li:hover{
+			background-color: lightblue;
+		}
+		#nav a{
+			color: white;
+			font-size: 20px;
+		}
+		#foot{
+			width: 100%;
+			text-align: center;
+		}
+		.wz{
+			border: 1px solid purple;
+		}
+		.wz a{
+			color: purple;
+			transition: all 0.3s;
+		}
+		
+		#table .wz:hover{
+			background-color: purple;
+			animation: flipInX 0.5s;
+		}
+		
+		.ds{
+			border: 1px solid palevioletred;
+		}
+		.ds a{
+			color: palevioletred;
+			transition: all 0.3s;
+		}
+		#table .ds:hover{
+			background-color: palevioletred;
+			animation: tada 0.5s;
+		}
+		
+		.lq{
+			border: 1px solid rgb(205, 223, 45);
+		}
+		.lq a{
+			color: rgb(205, 223, 45);
+			transition: all 0.3s;
+		}
+		#table .lq:hover{
+			background-color: rgb(205, 223, 45);
+			animation: tada 0.5s;
+		}
+	</style>
+</head>
+<body>
+
+	<table border="1" cellspacing="0" cellpadding="0" id="table" class="animated zoomIn">
+		<!--标题-->
+		<tr id="one">
+			<td colspan="6" style="background-color: cornflowerblue;color: white;font-size: 20px;font-weight: bold;border: 2px solid cornflowerblue;">导航类html代码收藏</td>
+		</tr>
+		<!--对应的链接-->
+		<tr>
+			<td class="blog"><a href="100/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="101/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="102/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="103/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="104/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="105/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="106/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="107/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="108/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="109/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="110/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="111/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="112/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="113/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="114/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="115/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="116/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="117/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="118/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="118/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="120/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="121/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="122/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="123/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="124/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="125/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="126/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<!--标题-->
+		<tr>
+			<td colspan="6" style="background-color: indianred;color: white;font-size: 20px;font-weight: bold;border: 2px solid indianred;">个人主页类html代码收藏</td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="200/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="201/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="202/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="203/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="204/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="205/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="206/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="207/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="208/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="209/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="210/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="211/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="212/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="213/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="214/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="215/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="216/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="217/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="218/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="219/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="220/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="221/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="222/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<!--标题-->
+		<tr>
+			<td colspan="6" style="background-color: green;color: white;font-size: 20px;font-weight: bold;border: 2px solid green;">加载特效类html代码收藏</td>
+		</tr>
+			<tr>
+			<td class="jc"><a href="300/index.html" target="_blank">HTML5两层圆形进度条</a></td>
+			<td class="jc"><a href="301/index.html" target="_blank">查看演示</a></td>
+			<td class="jc"><a href="302/html/1.html" target="_blank">查看演示</a></td>
+			<td class="jc"><a href="303/index.html" target="_blank">Tooltip工具提示插件</a></td>
+			<td class="jc"><a href="304/index.html" target="_blank">演示5</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="305/index.html" target="_blank">滤镜聚光高亮文字css代码</a></td>
+			<td class="jc"><a href="306/index.html" target="_blank">滚动进度</a></td>
+			<td class="jc"><a href="307/index.html" target="_blank">时钟</a></td>
+			<td class="jc"><a href="308/index.html" target="_blank">21种html5+css3鼠标悬停hover超链接导航条动画效果</a></td>
+			<td class="jc"><a href="309/index.html" target="_blank">Web酷炫特效</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="310/index.html" target="_blank">百分比加载</a></td>
+			<td class="jc"><a href="311/index.html" target="_blank">查看演示</a></td>
+			<td class="jc"><a href="312/index.html" target="_blank">黑白圆形loading</a></td>
+			<td class="jc"><a href="313/index.html" target="_blank">蓝屏崩溃</a></td>
+			<td class="jc"><a href="314/index.html" target="_blank">loading/进度条 组件</a></td>
+		</tr>
+		<tr>
+			<td class="jc"><a href="315/index.html" target="_blank">24种特效</a></td>
+			<td class="jc"><a href="316/index.html" target="_blank">Scroll Spirals</a></td>
+			<td class="jc"><a href="317/index.html" target="_blank">>渐变闪亮加载动画</a></td>
+			<td class="jc"><a href="318/index.html" target="_blank">30种特效</a></td>
+			<td class="jc"><a href="319/index.html" target="_blank">网站维护中静态页面.</a></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="background-color: purple;color: white;font-size: 20px;font-weight: bold;border: 2px solid purple;">404html代码收藏</td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/404.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-1.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-2.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-3.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-4.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/404-5.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-6.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-7.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-8.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/1/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/2/index.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/3/index.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/4/index.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/5/index.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/6/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/404-9.html" target="_blank">谷歌404游戏</a></td>
+			<td class="wz"><a href="404/404-10.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-11.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-12.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-13.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/404-14.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-15.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-16.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-17.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-18.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/404-19.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-20.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-21.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-22.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-23.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/404-24.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-25.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-26.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-27.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-28.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="wz"><a href="404/502.html" target="_blank">502错误</a></td>
+			<td class="wz"><a href="404/404-29.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="404/404-30.html" target="_blank">查看演示</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+			<td class="wz"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="background-color: palevioletred;color: white;font-size: 20px;font-weight: bold;border: 2px solid palevioletred;">工具类html代码收藏</td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="500/index.html" target="_blank">查看演示</a></td>
+			<td class="ds"><a href="501/index.html" target="_blank">查看演示</a></td>
+			<td class="ds"><a href="502/index.html" target="_blank">查看演示</a></td>
+			<td class="ds"><a href="503/index.html" target="_blank">查看演示</a></td>
+			<td class="ds"><a href="504/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="505/index.html" target="_blank">新站上线</a></td>
+			<td class="ds"><a href="506/index.html" target="_blank">随机跳转</a>&nbsp; &nbsp; <a href="506/go.html" target="_blank">固定跳转</a></td>
+			<td class="ds"><a href="507/index.html" target="_blank">小黑屋游戏</a></td>
+			<td class="ds"><a href="508/index.html" target="_blank">计算器</a></td>
+			<td class="ds"><a href="509/index.html" target="_blank">免费图床</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="510/index.html" target="_blank">截图</a></td>
+			<td class="ds"><a href="511/index.html" target="_blank">工具箱</a></td>
+			<td class="ds"><a href="512/index.html" target="_blank">电脑更新</a></td>
+			<td class="ds"><a href="513/index.html" target="_blank">微信 Markdown 编辑器</a></td>
+			<td class="ds"><a href="514/index.html" target="_blank">心灵毒鸡汤</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="515/index.html" target="_blank">微信名片</a></td>
+			<td class="ds"><a href="516/index.html" target="_blank">变量命名工具</a></td>
+			<td class="ds"><a href="517/index.html" target="_blank">在线HTML编辑器</a></td>
+			<td class="ds"><a href="518/index.html" target="_blank">自动生成文章导读</a></td>
+			<td class="ds"><a href="519/index.html" target="_blank">颜色图网站</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="520/index.html" target="_blank">Vue3代码在线运行工具</a></td>
+			<td class="ds"><a href="521/1/index.html" target="_blank">水印1</a>&nbsp; &nbsp; <a href="521/2/index.html" target="_blank">水印2</a></td>
+			<td class="ds"><a href="522/index.html" target="_blank">数学习题练习</a></td>
+			<td class="ds"><a href="523/index.html" target="_blank">超级书签</a></td>
+			<td class="ds"><a href="524/index.html" target="_blank">小学口算题</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="525/index.html" target="_blank">密码生成</a></td>
+			<td class="ds"><a href="526/index.html" target="_blank">HTML语法</a></td>
+			<td class="ds"><a href="527/index.html" target="_blank">计算天数</a></td>
+			<td class="ds"><a href="528/index.html" target="_blank">windows terminal网页版</a></td>
+			<td class="ds"><a href="529/index.html" target="_blank">HTML DIV+CSS 命名规范</a></td>
+		</tr>
+		<tr>
+			<td class="ds"><a href="530/index.html" target="_blank">MarkDown修改器</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+			<td class="ds"><a href="###" target="_blank">待添加</a></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="background-color: rgb(208, 230, 11);color: white;font-size: 20px;font-weight: bold;border: 2px solid  rgb(205, 223, 45);">乱七八糟的html代码收藏</td>
+		</tr>
+		<tr>
+			<td class="lq"><a href="600/index.html" target="_blank">查看演示</a></td>
+			<td class="lq"><a href="601/index.html" target="_blank">查看演示</a></td>
+			<td class="lq"><a href="602/index.html" target="_blank">查看演示</a></td>
+			<td class="lq"><a href="603/index.html" target="_blank">查看演示</a></td>
+			<td class="lq"><a href="604/index.html" target="_blank">window10</a></td>
+		</tr>
+		<tr>
+			<td class="lq"><a href="605/index.html" target="_blank">window12</a></td>
+			<td class="lq"><a href="606/index.html" target="_blank">查看演示</a></td>
+			<td class="lq"><a href="607/index.html" target="_blank">查看演示</a></td>
+			<td class="lq"><a href="608/index.html" target="_blank">Html+Css的基础常识(笔记)</a></td>
+			<td class="lq"><a href="609/index.html" target="_blank">最强大的日历工具库</a></td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<p>本站用来陈列一些新鲜、好玩的 HTML 作品。这些作品中，有一些是本人原创或改写的， 还有一些是别人的开源大作，但因其很有特色，值得学习玩味，因此也出现在这里。</p>
+				<p>本人崇尚开源精神，因此“本站”中大部分作品是开源的。 即使没有开源，您也可以通过右键查看源代码以进行查阅。</p> 
+				<p>请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！ </p>
+				<p>这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p><span id="time"></span>
+					<script>
+		function showTime() {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			month = month < 10 ? '0' + month : month;
+			var day = date.getDate();
+			day = day < 10 ? '0' + day : day;
+			var hour = date.getHours();
+			hour = hour < 10 ? '0' + hour : hour;
+			var minute = date.getMinutes();
+			minute = minute < 10 ? '0' + minute : minute;
+			var second = date.getSeconds();
+			second = second < 10 ? "0" + second : second;
+			var current = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+			document.getElementById("time").innerHTML = current;
+		}
+		setInterval("showTime()", 1000);//每隔1000毫秒（即1秒）显示一次当前时间
+	</script>
+         </td>
+		</tr>
+	</table>
+	<footer>
+		<div class="social">
+		  <i class="fa-brands fa-github" onclick="socialJump('github')"></i>
+		  <div class="point"></div>
+		  <i class="fa-solid fa-house" onclick="socialJump('home')"></i>
+		  <div class="point"></div>
+		  <i class="fa-solid fa-envelope" onclick="socialJump('email')"></i>
+		  <div class="point"></div>
+		  <i class="fa-brands fa-qq" onclick="socialJump('qq')"></i>
+		  <div class="point"></div>
+		  <i class="fa-solid fa-hand-holding-dollar" onclick="socialJump('pay')"></i>
+		</div>
+		<div class="power">
+		  Copyright ©
+		  <script>
+			document.write(new Date().getFullYear());
+		  </script>
+		  <a href="https://www.432600.xyz/" target="_blank">简单导航</a>
+		</div>
+	  </footer>
+	  <script>
+	
+		// 按钮事件
+		const clickFunction = () => {
+		  window.location.href = "/";
+		};
+	
+		// 社交链接跳转
+		const socialJump = (type) => {
+		  switch (type) {
+			case "github":
+			  window.location.href = "https://github.com/xgnw/";
+			  break;
+			case "home":
+			  window.location.href = "https://www.432600.xyz/";
+			  break;
+			case "email":
+			  window.location.href = "mailto:1223112302@qq.com";
+			  break;
+			case "qq":
+			  window.location.href = "tencent://message/?uin=1223112302";
+			  break;
+			case "pay":
+			  window.location.href = "pay.html";
+			  break;
+			default:
+			  break;
+		  }
+		};
+	  </script>
+    </body>
+</html>
