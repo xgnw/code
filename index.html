@@ -211,18 +211,6 @@ tr:nth-child(even) {
 			background-color: palevioletred;
 			animation: tada 0.5s;
 		}
-		
-		.lq{
-			border: 1px solid rgb(205, 223, 45);
-		}
-		.lq a{
-			color: rgb(205, 223, 45);
-			transition: all 0.3s;
-		}
-		#table .lq:hover{
-			background-color: rgb(205, 223, 45);
-			animation: tada 0.5s;
-		}
 	</style>
 </head>
 <body>
@@ -311,8 +299,15 @@ tr:nth-child(even) {
 			<td class="sever"><a href="220/index.html" target="_blank">查看演示</a></td>
 			<td class="sever"><a href="221/index.html" target="_blank">查看演示</a></td>
 			<td class="sever"><a href="222/index.html" target="_blank">查看演示</a></td>
-			<td class="sever"><a href="###" target="_blank">待添加</a></td>
-			<td class="sever"><a href="###" target="_blank">待添加</a></td>
+			<td class="sever"><a href="223/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="224/index.html" target="_blank">查看演示</a></td>
+		</tr>
+		<tr>
+			<td class="sever"><a href="225/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="226/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="227/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="228/index.html" target="_blank">查看演示</a></td>
+			<td class="sever"><a href="229/index.html" target="_blank">查看演示</a></td>
 		</tr>
 		<!--标题-->
 		<tr>
@@ -458,28 +453,37 @@ tr:nth-child(even) {
 			<td class="ds"><a href="###" target="_blank">待添加</a></td>
 		</tr>
 		<tr>
-			<td colspan="6" style="background-color: rgb(208, 230, 11);color: white;font-size: 20px;font-weight: bold;border: 2px solid  rgb(205, 223, 45);">乱七八糟的html代码收藏</td>
+			<td colspan="6" style="background-color: cornflowerblue;color: white;font-size: 20px;font-weight: bold;border: 2px solid cornflowerblue;">乱七八糟的html代码收藏</td>
 		</tr>
 		<tr>
-			<td class="lq"><a href="600/index.html" target="_blank">查看演示</a></td>
-			<td class="lq"><a href="601/index.html" target="_blank">查看演示</a></td>
-			<td class="lq"><a href="602/index.html" target="_blank">查看演示</a></td>
-			<td class="lq"><a href="603/index.html" target="_blank">查看演示</a></td>
-			<td class="lq"><a href="604/index.html" target="_blank">window10</a></td>
+			<td class="blog"><a href="600/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="601/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="602/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="603/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="604/index.html" target="_blank">window10</a></td>
 		</tr>
 		<tr>
-			<td class="lq"><a href="605/index.html" target="_blank">window12</a></td>
-			<td class="lq"><a href="606/index.html" target="_blank">查看演示</a></td>
-			<td class="lq"><a href="607/index.html" target="_blank">查看演示</a></td>
-			<td class="lq"><a href="608/index.html" target="_blank">Html+Css的基础常识(笔记)</a></td>
-			<td class="lq"><a href="609/index.html" target="_blank">最强大的日历工具库</a></td>
+			<td class="blog"><a href="605/index.html" target="_blank">window12</a></td>
+			<td class="blog"><a href="606/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="607/index.html" target="_blank">查看演示</a></td>
+			<td class="blog"><a href="608/index.html" target="_blank">Html+Css的基础常识(笔记)</a></td>
+			<td class="blog"><a href="609/index.html" target="_blank">最强大的日历工具库</a></td>
+		</tr>
+		<tr>
+			<td class="blog"><a href="610/index.html" target="_blank">渐变背景CSS3样式</a></td>
+			<td class="blog"><a href="611/index.html" target="_blank">八字排盘</a></td>
+			<td class="blog"><a href="612/index.html" target="_blank">古诗文取名</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
+			<td class="blog"><a href="###" target="_blank">待添加</a></td>
 		</tr>
 		<tr>
 			<td colspan="6">
 				<p>本站用来陈列一些新鲜、好玩的 HTML 作品。这些作品中，有一些是本人原创或改写的， 还有一些是别人的开源大作，但因其很有特色，值得学习玩味，因此也出现在这里。</p>
 				<p>本人崇尚开源精神，因此“本站”中大部分作品是开源的。 即使没有开源，您也可以通过右键查看源代码以进行查阅。</p> 
 				<p>请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！ </p>
-				<p>这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p><span id="time"></span>
+				<p>这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
+				<p>当前时间：<span id="time"></span></p>
+				    <div id="last-updated"></div>
 					<script>
 		function showTime() {
 			var date = new Date();
@@ -498,7 +502,17 @@ tr:nth-child(even) {
 			document.getElementById("time").innerHTML = current;
 		}
 		setInterval("showTime()", 1000);//每隔1000毫秒（即1秒）显示一次当前时间
-	</script>
+	</script>    
+	<script>
+        function updateLastUpdated() {
+            var lastUpdated = document.getElementById('last-updated');
+            lastUpdated.innerHTML = '最后更新时间: ' + new Date().toLocaleDateString();
+        }
+ 
+        window.onload = function() {
+            updateLastUpdated();
+        };
+    </script>
          </td>
 		</tr>
 	</table>
